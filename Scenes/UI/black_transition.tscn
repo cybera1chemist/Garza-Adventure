@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0r343yubovfb"]
+
+[ext_resource type="Script" uid="uid://f6qrrpj405b7" path="res://Scripts/black_transition.gd" id="1_16bag"]
+
+[sub_resource type="Animation" id="Animation_8t6p5"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_845va"]
+resource_name = "fade_in"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("black:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etdpv"]
+_data = {
+&"RESET": SubResource("Animation_8t6p5"),
+&"fade_in": SubResource("Animation_845va")
+}
+
+[node name="BlackTransition" type="CanvasLayer"]
+script = ExtResource("1_16bag")
+
+[node name="black" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_etdpv")
+}

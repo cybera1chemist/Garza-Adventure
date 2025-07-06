@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=10 format=3 uid="uid://caal83o344up8"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_8tsmm"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_vht1g"]
+
+[sub_resource type="Resource" id="Resource_8tsmm"]
+script = ExtResource("1_8tsmm")
+character_name = "武馆老板："
+content = "哟，今天放学这么早呀？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_vht1g"]
+script = ExtResource("1_8tsmm")
+character_name = "嘎子："
+content = "哇，老板今天的剑招好帅！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_nlfsa"]
+script = ExtResource("1_8tsmm")
+character_name = "武馆老板："
+content = "哈哈，这是我最新独创的招式，还没想好起什么名字呢。既然你说它好帅，那就叫好帅七式吧！哈哈！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_h07bm"]
+script = ExtResource("1_8tsmm")
+character_name = "武馆老板："
+content = "嘎子，我看你长得挺帅，非常适合学习这套好帅七式，不如以后每天放学来我这学武吧。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_7e6b0"]
+script = ExtResource("1_8tsmm")
+character_name = "嘎子："
+content = "可是我每天都有很多作业要写……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_pntl0"]
+script = ExtResource("1_8tsmm")
+character_name = "武馆老板："
+content = "好吧，不过可别把学校生活当成你的全部啊！年轻人就该多出去闯一闯！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_cg46n"]
+script = ExtResource("1_8tsmm")
+character_name = "嘎子："
+content = "（出去闯一闯吗……）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_vht1g")
+dialog_list = Array[ExtResource("1_8tsmm")]([SubResource("Resource_8tsmm"), SubResource("Resource_vht1g"), SubResource("Resource_nlfsa"), SubResource("Resource_h07bm"), SubResource("Resource_7e6b0"), SubResource("Resource_pntl0"), SubResource("Resource_cg46n")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

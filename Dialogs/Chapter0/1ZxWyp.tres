@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=5 format=3 uid="uid://blyryxpxtpj5e"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_7tl5p"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_noe0d"]
+
+[sub_resource type="Resource" id="Resource_7tl5p"]
+script = ExtResource("1_7tl5p")
+character_name = "嘎子："
+content = "（他们俩是我的同班同学，每天下午放学都坐在这打游戏。）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_noe0d"]
+script = ExtResource("1_7tl5p")
+character_name = "嘎子："
+content = "（看他俩打得这么起劲，还是不要打扰他们了，我接着回家吧。）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_noe0d")
+dialog_list = Array[ExtResource("1_7tl5p")]([SubResource("Resource_7tl5p"), SubResource("Resource_noe0d")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

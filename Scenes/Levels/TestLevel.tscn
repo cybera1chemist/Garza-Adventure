@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://7ywga0lccvl8"]
+
+[ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="1_ss4xl"]
+[ext_resource type="PackedScene" uid="uid://duokno1vhltyg" path="res://Scenes/UI/pause_menu.tscn" id="2_ytf4i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytf4i"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 570.0
+offset_top = 393.0
+offset_right = 1465.0
+offset_bottom = 740.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_ss4xl")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytf4i")
+text = "目前本游戏就只开发到这里啦，
+谢谢大家的游玩^_^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("2_ytf4i")]

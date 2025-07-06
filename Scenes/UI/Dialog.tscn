@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1rtcqje700hj"]
+
+[ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/DialogTheme.tres" id="1_863ar"]
+[ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="2_7ia2c"]
+[ext_resource type="Script" uid="uid://dusrjwqv4i4to" path="res://Scripts/DialogManager.gd" id="2_y7w4a"]
+[ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="3_y7w4a"]
+[ext_resource type="AudioStream" uid="uid://c6pqjc05evs2j" path="res://SFX/TypingTween.wav" id="5_y7w4a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7w4a"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7w4a"]
+size = Vector2(500, 400)
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_863ar")
+script = ExtResource("2_y7w4a")
+
+[node name="TextPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -206.0
+offset_right = 298.0
+offset_bottom = -6.0
+theme = ExtResource("1_863ar")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="character_name" type="Label" parent="TextPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7ia2c")
+theme_override_font_sizes/font_size = 28
+text = "嘎子："
+
+[node name="text_content" type="Label" parent="TextPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(570, 105)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y7w4a")
+theme_override_font_sizes/font_size = 26
+text = "大家好，我是嘎子，哈哈哈哈， 我讲了很多话，测试一下autowrap怎么样，呵呵哈哈哈哈，黑黑黑黑黑黑红红火火恍恍惚惚哈啦啦啦"
+autowrap_mode = 3
+
+[node name="PressSpace" type="Label" parent="TextPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.32, 0.32, 1)
+theme_override_font_sizes/font_size = 16
+text = "（按空格键继续对话）"
+horizontal_alignment = 2
+
+[node name="TypingSFX" type="AudioStreamPlayer2D" parent="TextPanel"]
+stream = ExtResource("5_y7w4a")
+
+[node name="PressF" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -88.0
+offset_top = -37.0
+offset_right = 80.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_7ia2c")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_y7w4a")
+text = "按F键对话"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 160)
+shape = SubResource("RectangleShape2D_y7w4a")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

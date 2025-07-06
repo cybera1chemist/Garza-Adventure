@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=10 format=3 uid="uid://dkihouhla4s0t"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_0e5o3"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_lk4xl"]
+
+[sub_resource type="Resource" id="Resource_0e5o3"]
+script = ExtResource("1_0e5o3")
+character_name = "邻家姐姐："
+content = "嘎子，我新学的芭蕾好看嘛？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_lk4xl"]
+script = ExtResource("1_0e5o3")
+character_name = "嘎子："
+content = "哇，优雅，太优雅了！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_y4bo5"]
+script = ExtResource("1_0e5o3")
+character_name = "邻家姐姐："
+content = "嘿嘿，我才刚开始学呢，动作还不太熟练。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_2yor0"]
+script = ExtResource("1_0e5o3")
+character_name = "邻家姐姐："
+content = "其实我小时候有一个愿望，是当世界上最优雅最美丽的芭蕾舞者！可是后来一直没有机会学，总是拿学习太忙当借口……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_ipuc3"]
+script = ExtResource("1_0e5o3")
+character_name = "嘎子："
+content = "那要恭喜你，现在终于可以重拾小时候的梦想啦！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_l5qsn"]
+script = ExtResource("1_0e5o3")
+character_name = "邻家姐姐："
+content = "是的呢！嘎子你要是有什么想实现的梦想，一定要趁早行动。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_eogkq"]
+script = ExtResource("1_0e5o3")
+character_name = "邻家姐姐："
+content = "我现在大学刚毕业，还不算太晚，要是再等着工作，成家，买房，养小孩，最后等到五六十岁……那就真的来不及啦。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_lk4xl")
+dialog_list = Array[ExtResource("1_0e5o3")]([SubResource("Resource_0e5o3"), SubResource("Resource_lk4xl"), SubResource("Resource_y4bo5"), SubResource("Resource_2yor0"), SubResource("Resource_ipuc3"), SubResource("Resource_l5qsn"), SubResource("Resource_eogkq")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

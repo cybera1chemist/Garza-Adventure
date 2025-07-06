@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://duokno1vhltyg"]
+
+[ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/MenuTheme.tres" id="1_8rf44"]
+[ext_resource type="Texture2D" uid="uid://c4ciotam8jh12" path="res://Assets/UI/icons/settings-normal.png" id="3_qyryt"]
+[ext_resource type="Script" uid="uid://bv7ae8ve66i6a" path="res://Scripts/PauseMenu.gd" id="3_r2i2h"]
+[ext_resource type="Texture2D" uid="uid://bvtbmhgh1eiw6" path="res://Assets/UI/icons/settings-pressed.png" id="4_23me3"]
+[ext_resource type="Shader" uid="uid://c1iv0w6rcqnny" path="res://Shader/blur.gdshader" id="4_oykix"]
+[ext_resource type="Texture2D" uid="uid://ddkoj75ghnmsy" path="res://Assets/UI/icons/settings-hover.png" id="5_deree"]
+[ext_resource type="Texture2D" uid="uid://b8lnjcjx46l3" path="res://Assets/UI/Pause-0.png" id="5_kdnb7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdnb7"]
+shader = ExtResource("4_oykix")
+shader_parameter/lod = 2.0
+
+[node name="pause_menu" type="Control"]
+process_mode = 3
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_r2i2h")
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+process_mode = 1
+layout_mode = 1
+offset_right = 96.0
+offset_bottom = 96.0
+focus_mode = 0
+theme = ExtResource("1_8rf44")
+texture_normal = ExtResource("3_qyryt")
+texture_pressed = ExtResource("4_23me3")
+texture_hover = ExtResource("5_deree")
+
+[node name="Blur" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_kdnb7")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Tablet" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+z_index = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_kdnb7")
+
+[node name="Title" type="Label" parent="Tablet"]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 288.0
+offset_right = 1111.0
+offset_bottom = 357.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 50
+text = "游戏已暂停"
+horizontal_alignment = 1
+
+[node name="VolumnBtn" type="Button" parent="Tablet"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+offset_left = 700.0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 530.0
+theme_override_font_sizes/font_size = 24
+text = "音量设置"
+
+[node name="LatencyBtn" type="Button" parent="Tablet"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+offset_left = 1020.0
+offset_top = 450.0
+offset_right = 1220.0
+offset_bottom = 530.0
+theme_override_font_sizes/font_size = 24
+text = "延迟调整"
+
+[node name="ResumeBtn" type="Button" parent="Tablet"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+offset_left = 700.0
+offset_top = 630.0
+offset_right = 900.0
+offset_bottom = 710.0
+theme_override_font_sizes/font_size = 24
+text = "返回游戏"
+
+[node name="SaveExitBtn" type="Button" parent="Tablet"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+offset_left = 1020.0
+offset_top = 630.0
+offset_right = 1220.0
+offset_bottom = 710.0
+theme_override_font_sizes/font_size = 24
+text = "保存并退出"
+
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Tablet/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="Tablet/SaveExitBtn" to="." method="_on_save_exit_btn_pressed"]

@@ -1,0 +1,149 @@
+[gd_scene load_steps=21 format=3 uid="uid://bui7sw7j4cxgy"]
+
+[ext_resource type="Texture2D" uid="uid://cpr2l6dc41gx7" path="res://Assets/Arts/Background/嘎子家里.png" id="1_deqih"]
+[ext_resource type="Texture2D" uid="uid://cguslbffjaquy" path="res://Assets/Arts/Background/嘎子家里(1).png" id="2_l1axm"]
+[ext_resource type="Script" uid="uid://peljccnmt5jh" path="res://Scripts/temp.gd" id="3_gc6mk"]
+[ext_resource type="PackedScene" uid="uid://cbhg7n8sqrn2e" path="res://Scenes/Characters/嘎子.tscn" id="3_l1axm"]
+[ext_resource type="PackedScene" uid="uid://duokno1vhltyg" path="res://Scenes/UI/pause_menu.tscn" id="4_8766m"]
+[ext_resource type="Texture2D" uid="uid://bqlo362jxaoon" path="res://Assets/Arts/MobSprites/Jwt.png" id="4_rklmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8766m"]
+size = Vector2(421, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s58dy"]
+size = Vector2(54, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5e83"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(0, 0, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abc3r"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(702, 0, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohsxt"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(1404, 0, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q63v2"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(2106, 0, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb7ev"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(2808, 0, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xqaa"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(0, 702, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esnd0"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(702, 702, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwv3i"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(1404, 702, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgh6x"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(2106, 702, 702, 702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb8yq"]
+atlas = ExtResource("4_rklmy")
+region = Rect2(2808, 702, 702, 702)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_poqba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5e83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abc3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohsxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q63v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb7ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xqaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esnd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwv3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgh6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb8yq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5u81"]
+size = Vector2(628, 745)
+
+[node name="chapter0_home" type="Node2D"]
+y_sort_enabled = true
+
+[node name="嘎子家背景area" type="StaticBody2D" parent="."]
+
+[node name="嘎子家背景" type="Sprite2D" parent="嘎子家背景area"]
+texture = ExtResource("1_deqih")
+
+[node name="CollisionShape-sofa" type="CollisionShape2D" parent="嘎子家背景area"]
+position = Vector2(255.5, 161.5)
+shape = SubResource("RectangleShape2D_8766m")
+
+[node name="CollisionShape-plant" type="CollisionShape2D" parent="嘎子家背景area"]
+position = Vector2(-214, 136.5)
+shape = SubResource("RectangleShape2D_s58dy")
+
+[node name="Garza" parent="." instance=ExtResource("3_l1axm")]
+position = Vector2(-54, 174)
+CMR_limit_left = -960
+CMR_limit_right = 2000
+CMR_limit_top = -5000
+CMR_limit_bottom = 540
+wall_left = -1000
+wall_right = 650
+wall_top = 145
+wall_bottom = 440
+
+[node name="Jwt" type="CharacterBody2D" parent="."]
+position = Vector2(-383, 280)
+scale = Vector2(0.5, 0.5)
+motion_mode = 1
+script = ExtResource("3_gc6mk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jwt"]
+position = Vector2(-18, -314)
+sprite_frames = SubResource("SpriteFrames_poqba")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="Jwt"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jwt/Area2D"]
+position = Vector2(4, -312)
+shape = SubResource("RectangleShape2D_b5u81")
+
+[node name="嘎子家外墙" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("2_l1axm")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="UI" instance=ExtResource("4_8766m")]
+
+[connection signal="body_entered" from="Jwt/Area2D" to="Jwt" method="_on_area_2d_body_entered"]

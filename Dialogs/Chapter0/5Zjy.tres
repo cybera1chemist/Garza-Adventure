@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=10 format=3 uid="uid://ce4t1mk4wiegf"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_b6ntj"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_4nmsj"]
+
+[sub_resource type="Resource" id="Resource_b6ntj"]
+script = ExtResource("1_b6ntj")
+character_name = "咖啡屋老板："
+content = "黑咖啡的苦涩，不及我人生的苦涩的十分之一。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_4nmsj"]
+script = ExtResource("1_b6ntj")
+character_name = "咖啡屋老板："
+content = "好久不见了，小帅哥。即使已经过了这么久，我还是能看出来，你有着和我相似的眼神。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_wj0up"]
+script = ExtResource("1_b6ntj")
+character_name = "嘎子："
+content = "（不是今天早上才碰见过的吗……）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_eo8wo"]
+script = ExtResource("1_b6ntj")
+character_name = "咖啡屋老板："
+content = "那是不满的眼神！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_0fsmj"]
+script = ExtResource("1_b6ntj")
+character_name = "咖啡屋老板："
+content = "寻常的人，只会把咖啡当作饮品；而像你我这样的人，则会在恰当的时机，将承载自己苦涩的黑咖啡泼洒在对面之人的头顶。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_d0l6v"]
+script = ExtResource("1_b6ntj")
+character_name = "咖啡屋老板："
+content = "你既然有一颗不安于现状的心，就不该像我一样，拘泥在这个小小的乐园中。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_3p5ns"]
+script = ExtResource("1_b6ntj")
+character_name = "嘎子："
+content = "如果有机会的话，我会去外面的世界看看的！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_4nmsj")
+dialog_list = Array[ExtResource("1_b6ntj")]([SubResource("Resource_b6ntj"), SubResource("Resource_4nmsj"), SubResource("Resource_wj0up"), SubResource("Resource_eo8wo"), SubResource("Resource_0fsmj"), SubResource("Resource_d0l6v"), SubResource("Resource_3p5ns")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

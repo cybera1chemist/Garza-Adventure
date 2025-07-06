@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=12 format=3 uid="uid://dx0ndlqyptfn0"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_u8ucc"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_kxqyt"]
+
+[sub_resource type="Resource" id="Resource_u8ucc"]
+script = ExtResource("1_u8ucc")
+character_name = "嘎子："
+content = "老板，店里进了哪些新书呀？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_kxqyt"]
+script = ExtResource("1_u8ucc")
+character_name = "书店老板："
+content = "我想想……都是些畅销书，有《啦啦啪历史全集》，《带着巴沙鱼旅行》，《暴雨七日规则怪谈》，"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_v4v05"]
+script = ExtResource("1_u8ucc")
+character_name = "书店老板："
+content = "《皮皮历险记》，《啾啾的奇妙冒险》，还有《如何变帅》。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_t1u5t"]
+script = ExtResource("1_u8ucc")
+character_name = "书店老板："
+content = "不过最后一本你肯定不需要啦……听说你已经是全校最帅的小动物了……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_mr7xw"]
+script = ExtResource("1_u8ucc")
+character_name = "嘎子："
+content = "那老板你正在读的是什么书呀？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_iqaxl"]
+script = ExtResource("1_u8ucc")
+character_name = "书店老板："
+content = "是《占卜家晋升手册》……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_wnja1"]
+script = ExtResource("1_u8ucc")
+character_name = "书店老板："
+content = "“今天将会是改变你的生活的一天”……这是我给你占卜的结果……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_r7xk8"]
+script = ExtResource("1_u8ucc")
+character_name = "嘎子："
+content = "哇，不知道该信好还是不信好呢。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_lreer"]
+script = ExtResource("1_u8ucc")
+character_name = "书店老板："
+content = "对了，回家叫你妈妈把在我这借的《征服世界的100种方法》还回来……都逾期一个月了……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_kxqyt")
+dialog_list = Array[ExtResource("1_u8ucc")]([SubResource("Resource_u8ucc"), SubResource("Resource_kxqyt"), SubResource("Resource_v4v05"), SubResource("Resource_t1u5t"), SubResource("Resource_mr7xw"), SubResource("Resource_iqaxl"), SubResource("Resource_wnja1"), SubResource("Resource_r7xk8"), SubResource("Resource_lreer")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

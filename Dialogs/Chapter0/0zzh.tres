@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=12 format=3 uid="uid://cis71uda3ld5q"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_7ul73"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_jq608"]
+
+[sub_resource type="Resource" id="Resource_7ul73"]
+script = ExtResource("1_7ul73")
+character_name = "嘎子："
+content = "小鹿老师再见~"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_jq608"]
+script = ExtResource("1_7ul73")
+character_name = "小鹿老师："
+content = "等等，嘎子。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_qwsad"]
+script = ExtResource("1_7ul73")
+character_name = "小鹿老师："
+content = "我发现你最近在学校总是无精打采的，上课也经常打瞌睡，是晚上没睡好吗？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_7pr3j"]
+script = ExtResource("1_7ul73")
+character_name = "嘎子："
+content = "没有啦，我晚上睡的可好了，只不过……嗯，没什么。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_mebbm"]
+script = ExtResource("1_7ul73")
+character_name = "小鹿老师："
+content = "让我猜猜，你是不是觉得学校的日常对你来说有点无聊？你已经厌倦了日复一日重复的生活吧？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_tslr5"]
+script = ExtResource("1_7ul73")
+character_name = "嘎子："
+content = "（其实我的确是这么想的，但是……）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_k6mt1"]
+script = ExtResource("1_7ul73")
+character_name = "小鹿老师："
+content = "老师可没有责怪你的意思哦。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_7ve3f"]
+script = ExtResource("1_7ul73")
+character_name = "小鹿老师："
+content = "老师相信，如果你不甘于一直过平凡的生活，那你的生活很快就会发生改变的……也许就是今天呢？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_nuo3q"]
+script = ExtResource("1_7ul73")
+character_name = "小鹿老师："
+content = "好啦，快回家吧，别让你妈妈等急啦。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_jq608")
+dialog_list = Array[ExtResource("1_7ul73")]([SubResource("Resource_7ul73"), SubResource("Resource_jq608"), SubResource("Resource_qwsad"), SubResource("Resource_7pr3j"), SubResource("Resource_mebbm"), SubResource("Resource_tslr5"), SubResource("Resource_k6mt1"), SubResource("Resource_7ve3f"), SubResource("Resource_nuo3q")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

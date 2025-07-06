@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=9 format=3 uid="uid://r32pc7eb4cw6"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_glsr7"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_01r53"]
+
+[sub_resource type="Resource" id="Resource_glsr7"]
+script = ExtResource("1_glsr7")
+character_name = "嘎子："
+content = "（这是谁？以前在这条街上没见过他。）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_01r53"]
+script = ExtResource("1_glsr7")
+character_name = "侦探："
+content = "我是来自远方的名侦探，来到这条小街上调查一起奇特的案件。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_qjpij"]
+script = ExtResource("1_glsr7")
+character_name = "嘎子："
+content = "（哇，这还是我第一次见到侦探！他还蛮帅的。）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_ujwtk"]
+script = ExtResource("1_glsr7")
+character_name = "侦探："
+content = "谢谢夸奖，你也蛮帅的。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_037jo"]
+script = ExtResource("1_glsr7")
+character_name = "嘎子："
+content = "（这人好没素质，怎么老是读别人的内心独白？）"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_sak8g"]
+script = ExtResource("1_glsr7")
+character_name = "侦探："
+content = "那你倒是别把内心独白写在气泡框里啊！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_01r53")
+dialog_list = Array[ExtResource("1_glsr7")]([SubResource("Resource_glsr7"), SubResource("Resource_01r53"), SubResource("Resource_qjpij"), SubResource("Resource_ujwtk"), SubResource("Resource_037jo"), SubResource("Resource_sak8g")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"
