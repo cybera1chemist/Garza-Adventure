@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://lxsx3cnkrhla"]
+
+[ext_resource type="Texture2D" uid="uid://b2xly1ivnsbe1" path="res://Battle/B0_instruction/B0-background.png" id="1_uf6gr"]
+[ext_resource type="PackedScene" uid="uid://duokno1vhltyg" path="res://Scenes/UI/pause_menu.tscn" id="2_bkbki"]
+[ext_resource type="PackedScene" uid="uid://67k26hnvtih1" path="res://Battle/UI_Scene/battle_ui.tscn" id="3_m477q"]
+[ext_resource type="PackedScene" uid="uid://dr817iw32v0t3" path="res://Battle/CharacterScenes/garza_battle.tscn" id="4_ut1bh"]
+
+[node name="B0-instruction" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(2, 2)
+texture = ExtResource("1_uf6gr")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="UI" instance=ExtResource("2_bkbki")]
+
+[node name="Garza" parent="." instance=ExtResource("4_ut1bh")]
+position = Vector2(339, 634)
+
+[node name="BattleUI" parent="." instance=ExtResource("3_m477q")]

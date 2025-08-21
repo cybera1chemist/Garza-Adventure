@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=3 uid="uid://67k26hnvtih1"]
+
+[ext_resource type="Texture2D" uid="uid://dvd2b6vb0wjdf" path="res://Battle/art/音符槽.png" id="1_jlo34"]
+[ext_resource type="Script" uid="uid://xqvwugiii3n3" path="res://Battle/Scripts/battle.gd" id="1_w7thn"]
+[ext_resource type="Resource" uid="uid://x0vd5v87el66" path="res://Battle/B0_instruction/B0_player_chart.tres" id="2_862p5"]
+[ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/MenuTheme.tres" id="4_v78ou"]
+
+[node name="BattleUI" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w7thn")
+chart = ExtResource("2_862p5")
+
+[node name="note槽" type="Node2D" parent="."]
+
+[node name="音符槽1" type="Sprite2D" parent="note槽"]
+position = Vector2(215, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽2" type="Sprite2D" parent="note槽"]
+position = Vector2(425, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽3" type="Sprite2D" parent="note槽"]
+position = Vector2(635, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽4" type="Sprite2D" parent="note槽"]
+position = Vector2(845, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽5" type="Sprite2D" parent="note槽"]
+position = Vector2(1075, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽6" type="Sprite2D" parent="note槽"]
+position = Vector2(1285, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽7" type="Sprite2D" parent="note槽"]
+position = Vector2(1495, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="音符槽8" type="Sprite2D" parent="note槽"]
+position = Vector2(1705, 970)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jlo34")
+
+[node name="music_start_timer" type="Timer" parent="."]
+wait_time = 1.928
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 1742.0
+offset_top = 10.0
+offset_right = 1862.0
+offset_bottom = 59.0
+theme = ExtResource("4_v78ou")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "000000"
+horizontal_alignment = 2
+
+[node name="ComboLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 1008.0
+offset_top = 42.0
+offset_right = 1128.0
+offset_bottom = 91.0
+theme = ExtResource("4_v78ou")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="ForTestOnly" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="perfect" type="Label" parent="ForTestOnly"]
+layout_mode = 1
+offset_left = 511.0
+offset_top = 179.0
+offset_right = 631.0
+offset_bottom = 228.0
+theme = ExtResource("4_v78ou")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="good" type="Label" parent="ForTestOnly"]
+layout_mode = 1
+offset_left = 967.0
+offset_top = 179.0
+offset_right = 1087.0
+offset_bottom = 228.0
+theme = ExtResource("4_v78ou")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="miss" type="Label" parent="ForTestOnly"]
+layout_mode = 1
+offset_left = 1353.0
+offset_top = 171.0
+offset_right = 1473.0
+offset_bottom = 220.0
+theme = ExtResource("4_v78ou")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"

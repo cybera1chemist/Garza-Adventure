@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2c4kj6inqlqs"]
+
+[ext_resource type="Script" uid="uid://bnfe5y3o7jxyy" path="res://Battle/Scripts/hold_note.gd" id="1_gynxh"]
+[ext_resource type="Texture2D" uid="uid://uvv4y6kfb3nn" path="res://Battle/art/TappedTail.png" id="2_jq633"]
+[ext_resource type="Texture2D" uid="uid://d3r8s58fl0432" path="res://Battle/art/NoteHead.png" id="2_pwnvl"]
+[ext_resource type="Texture2D" uid="uid://b6bu4goheuudq" path="res://Battle/art/NoteBody.png" id="3_gynxh"]
+[ext_resource type="Texture2D" uid="uid://dlwgyitpfb2wv" path="res://Battle/art/NoteTail.png" id="4_jq633"]
+[ext_resource type="Texture2D" uid="uid://5i07pkxtwpci" path="res://Battle/art/TappedBody.png" id="4_m4old"]
+[ext_resource type="Texture2D" uid="uid://bfxir6u2kysty" path="res://Battle/art/TappedHead.png" id="6_bkrre"]
+
+[node name="HoldNote" type="Node2D"]
+script = ExtResource("1_gynxh")
+length = 500.0
+trail = 3
+
+[node name="MissedSprite" type="Node2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="Tail" type="Sprite2D" parent="MissedSprite"]
+texture = ExtResource("2_jq633")
+
+[node name="Body" type="Sprite2D" parent="MissedSprite"]
+position = Vector2(0, 28)
+texture = ExtResource("4_m4old")
+offset = Vector2(0, -28)
+
+[node name="Head" type="Sprite2D" parent="MissedSprite"]
+texture = ExtResource("6_bkrre")
+
+[node name="NoteSprite" type="Node2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="TailSprite" type="Sprite2D" parent="NoteSprite"]
+position = Vector2(0, -10)
+texture = ExtResource("4_jq633")
+
+[node name="BodySprite" type="Sprite2D" parent="NoteSprite"]
+texture_filter = 1
+position = Vector2(0, 28)
+texture = ExtResource("3_gynxh")
+offset = Vector2(0, -28)
+
+[node name="HeadSprite" type="Sprite2D" parent="NoteSprite"]
+texture = ExtResource("2_pwnvl")
