@@ -36,46 +36,46 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	position.y += delta * flow_speed
-	if can_be_judged:
-		if head.position.y > TARGET_Y + 150:
-			activate_next_note()
-			miss.emit()
-			missed_sprite.visible = true
-			note_sprite.visible = false
-	if tail.position.y > 1200:
-		queue_free()
-	# handle perfect or good
-	if can_be_judged:
-		if tail.position.y >= TARGET_Y-30:
-			activate_next_note()
-			if is_judging_perfect:
-				perfect.emit()
-				is_judging_perfect = false
-			else:
-				good.emit()
-				is_judging_good = false
-			disappear_after_tap()
-		
-func _input(event: InputEvent) -> void:
-	if not can_be_judged:  return
-	if event.is_action_pressed(trails[trail-1]):
-		if not (is_judging_good or is_judging_perfect):
-			judge()
-	#elif event.is_action_released(trails[trail-1]):
-		#if is_judging_good or is_judging_perfect:
+	#if can_be_judged:
+		#if head.position.y > TARGET_Y + 150:
 			#activate_next_note()
 			#miss.emit()
-			#print("Release hold note, miss emit")
 			#missed_sprite.visible = true
 			#note_sprite.visible = false
-				
-func judge():
-	if abs(position.y - TARGET_Y) <= PERFECT_DIFF:
-		is_judging_perfect = true
-	elif abs(position.y - TARGET_Y) <= GOOD_DIFF:
-		is_judging_good = true
-	elif abs(position.y - TARGET_Y) <= MISS_DIFF:
-		activate_next_note()
-		miss.emit()
-		missed_sprite.visible = true
-		note_sprite.visible = false
+	if tail.position.y > 1200:
+		queue_free()
+	## handle perfect or good
+	#if can_be_judged:
+		#if tail.position.y >= TARGET_Y-30:
+			#activate_next_note()
+			#if is_judging_perfect:
+				#perfect.emit()
+				#is_judging_perfect = false
+			#else:
+				#good.emit()
+				#is_judging_good = false
+			#disappear_after_tap()
+		#
+#func _input(event: InputEvent) -> void:
+	#if not can_be_judged:  return
+	#if event.is_action_pressed(trails[trail-1]):
+		#if not (is_judging_good or is_judging_perfect):
+			#judge()
+	##elif event.is_action_released(trails[trail-1]):
+		##if is_judging_good or is_judging_perfect:
+			##activate_next_note()
+			##miss.emit()
+			##print("Release hold note, miss emit")
+			##missed_sprite.visible = true
+			##note_sprite.visible = false
+				#
+#func judge():
+	#if abs(position.y - TARGET_Y) <= PERFECT_DIFF:
+		#is_judging_perfect = true
+	#elif abs(position.y - TARGET_Y) <= GOOD_DIFF:
+		#is_judging_good = true
+	#elif abs(position.y - TARGET_Y) <= MISS_DIFF:
+		#activate_next_note()
+		#miss.emit()
+		#missed_sprite.visible = true
+		#note_sprite.visible = false

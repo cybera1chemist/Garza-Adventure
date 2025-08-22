@@ -3,9 +3,21 @@ extends Control
 @export var chart: NoteChart
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+
+# Lanes
+@onready var lane1: Lane = $note槽/lane1
+@onready var lane2: Lane = $note槽/lane2
+@onready var lane3: Lane = $note槽/lane3
+@onready var lane4: Lane = $note槽/lane4
+@onready var lane5: Lane = $note槽/lane5
+@onready var lane6: Lane = $note槽/lane6
+@onready var lane7: Lane = $note槽/lane7
+@onready var lane8: Lane = $note槽/lane8
+var lanes: Array[Lane] = [null, lane1, lane2, lane3, lane4, lane5, lane6, lane7, lane8]
+
+# Labels
 @onready var score_label: Label = $ScoreLabel
 @onready var combo_label: Label = $ComboLabel
-
 @onready var perfect_label: Label = $ForTestOnly/perfect
 @onready var good_label: Label = $ForTestOnly/good
 @onready var miss_label: Label = $ForTestOnly/miss
@@ -13,7 +25,10 @@ extends Control
 
 # constant
 const MAX_SCORE: float = 1000000.0
-const target_y: float = 970.0
+const TARGET_Y: float = 970.0
+const PERFECT_DIFF: float = 80.0 # unit: mili-second
+const GOOD_DIFF: float = 160.0
+const BAD_DIFF: float = 180.0
 
 # music
 var bpm: float
@@ -32,11 +47,11 @@ var num_perfect: int = 0
 var num_good: int = 0
 var num_miss: int = 0
 
-# Linked Array
-var head_notes: Array[NoteInstance] = [null, null, null, null, null, null, null, null]
-var tail_notes: Array[NoteInstance] = [null, null, null, null, null, null, null, null]
+var music_delay_time: float
 
-func _ready() -> void:
+signal music_start
+
+func _ready() -> void:	
 	# Read chart
 	bpm = chart.bpm
 	music = chart.music
@@ -48,30 +63,44 @@ func _ready() -> void:
 	
 	var l = len(chart.notes)
 	score_per_perfect = (MAX_SCORE - combo_factor*l*(l+1)/2) / (l*(1-combo_factor))
-	score_per_good = score_per_perfect * 0.9
+	score_per_good = score_per_perfect * 0.8
 	
-	music_start()
+	music_start.connect(on_music_start)
+	for lane in lanes:
+		if lane != null:
+			music_start.connect(lane.on_music_start)
+			lane.perfect.connect(on_perfect)
+			lane.good.connect(on_good)
+			lane.bad.connect(on_bad)
+			lane.miss.connect(on_miss)
+			lane.chart = chart
+	music_start.emit()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	combo_label.text = "Combo: " + str(cur_combo)
 	perfect_label.text = "Perfect: " + str(num_perfect)
 	good_label.text = "Good: " + str(num_good)
 	miss_label.text = "Miss: " + str(num_miss)
 	
-func music_start():
+func on_music_start():
+	music_delay_time = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	audio_player.play()
+	
 	for note in chart.notes:
 		spawn_note(note.beat, note.length, note.trail)
+	for lane in lanes:
+		if lane != null:
+			lane.music_delay_time = music_delay_time
 
 
 func spawn_note(beat, length, trail):
 	var waiting_time: float = (beat+offset)*60/bpm # beat starts from 0 !!!!
-	waiting_time -= (target_y+50) / flow_speed
+	waiting_time -= (TARGET_Y+50) / flow_speed
 	if waiting_time < 0:
 		waiting_time = 0
 	var timer = get_tree().create_timer(waiting_time)
 	
-	var note
+	var note: NoteInstance
 	if length == 0.0: # short note
 		var note_scene := load("res://Battle/UI_Scene/note.tscn")
 		note = note_scene.instantiate()
@@ -84,18 +113,9 @@ func spawn_note(beat, length, trail):
 	
 	note.flow_speed = flow_speed	
 	note.trail = trail
-	note.perfect.connect(on_perfect)
-	note.good.connect(on_good)
-	note.miss.connect(on_miss)
 	
-	if head_notes[trail-1] == null:
-		head_notes[trail-1] = note
-		tail_notes[trail-1] = note
-		note.can_be_judged = true
-	else:
-		tail_notes[trail-1].next_note = note
-		tail_notes[trail-1] = note
-		note.can_be_judged = false
+	lanes[trail].upcoming_notes.append(note)
+	lanes[trail].bad.connect(note.on_bad)
 	
 	await timer.timeout
 	add_child(note)
@@ -117,6 +137,9 @@ func on_good():
 	combo_label.text = str(cur_combo)
 	score_label.text = str(int(round(cur_score)))
 
+func on_bad():
+	pass
+	
 func on_miss():
 	num_miss += 1
 	cur_combo = 0

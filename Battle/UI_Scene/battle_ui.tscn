@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://67k26hnvtih1"]
+[gd_scene load_steps=6 format=3 uid="uid://67k26hnvtih1"]
 
 [ext_resource type="Texture2D" uid="uid://dvd2b6vb0wjdf" path="res://Battle/art/音符槽.png" id="1_jlo34"]
 [ext_resource type="Script" uid="uid://xqvwugiii3n3" path="res://Battle/Scripts/battle.gd" id="1_w7thn"]
 [ext_resource type="Resource" uid="uid://x0vd5v87el66" path="res://Battle/B0_instruction/B0_player_chart.tres" id="2_862p5"]
+[ext_resource type="Script" uid="uid://caxj4w8uyf81u" path="res://Battle/Scripts/lane.gd" id="4_357p8"]
 [ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/MenuTheme.tres" id="4_v78ou"]
 
 [node name="BattleUI" type="Control"]
@@ -18,49 +19,61 @@ chart = ExtResource("2_862p5")
 
 [node name="note槽" type="Node2D" parent="."]
 
-[node name="音符槽1" type="Sprite2D" parent="note槽"]
+[node name="lane1" type="Sprite2D" parent="note槽"]
 position = Vector2(215, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 1
 
-[node name="音符槽2" type="Sprite2D" parent="note槽"]
+[node name="lane2" type="Sprite2D" parent="note槽"]
 position = Vector2(425, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 2
 
-[node name="音符槽3" type="Sprite2D" parent="note槽"]
+[node name="lane3" type="Sprite2D" parent="note槽"]
 position = Vector2(635, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 3
 
-[node name="音符槽4" type="Sprite2D" parent="note槽"]
+[node name="lane4" type="Sprite2D" parent="note槽"]
 position = Vector2(845, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 4
 
-[node name="音符槽5" type="Sprite2D" parent="note槽"]
+[node name="lane5" type="Sprite2D" parent="note槽"]
 position = Vector2(1075, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 5
 
-[node name="音符槽6" type="Sprite2D" parent="note槽"]
+[node name="lane6" type="Sprite2D" parent="note槽"]
 position = Vector2(1285, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 6
 
-[node name="音符槽7" type="Sprite2D" parent="note槽"]
+[node name="lane7" type="Sprite2D" parent="note槽"]
 position = Vector2(1495, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
+script = ExtResource("4_357p8")
+lane_id = 7
 
-[node name="音符槽8" type="Sprite2D" parent="note槽"]
+[node name="lane8" type="Sprite2D" parent="note槽"]
 position = Vector2(1705, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
-
-[node name="music_start_timer" type="Timer" parent="."]
-wait_time = 1.928
-one_shot = true
+script = ExtResource("4_357p8")
+lane_id = 8
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

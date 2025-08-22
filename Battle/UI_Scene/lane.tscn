@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvof3hlxuldvp"]
+
+[ext_resource type="Texture2D" uid="uid://dvd2b6vb0wjdf" path="res://Battle/art/音符槽.png" id="1_7xrhx"]
+[ext_resource type="Script" uid="uid://caxj4w8uyf81u" path="res://Battle/Scripts/lane.gd" id="2_8mx47"]
+
+[node name="lane" type="Sprite2D"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_7xrhx")
+script = ExtResource("2_8mx47")
+lane_id = 1
+
+[node name="Timer" type="Timer" parent="."]
