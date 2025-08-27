@@ -118,9 +118,20 @@ text = "0"
 
 [node name="good" type="Label" parent="ForTestOnly"]
 layout_mode = 1
-offset_left = 967.0
+offset_left = 849.0
+offset_top = 181.0
+offset_right = 969.0
+offset_bottom = 230.0
+theme = ExtResource("4_v78ou")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="bad" type="Label" parent="ForTestOnly"]
+layout_mode = 1
+offset_left = 1128.0
 offset_top = 179.0
-offset_right = 1087.0
+offset_right = 1248.0
 offset_bottom = 228.0
 theme = ExtResource("4_v78ou")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -129,10 +140,10 @@ text = "0"
 
 [node name="miss" type="Label" parent="ForTestOnly"]
 layout_mode = 1
-offset_left = 1353.0
-offset_top = 171.0
-offset_right = 1473.0
-offset_bottom = 220.0
+offset_left = 1387.0
+offset_top = 173.0
+offset_right = 1507.0
+offset_bottom = 222.0
 theme = ExtResource("4_v78ou")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35

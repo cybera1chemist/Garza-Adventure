@@ -10,3 +10,4 @@ script = ExtResource("2_8mx47")
 lane_id = 1
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true

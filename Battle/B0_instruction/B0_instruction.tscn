@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://lxsx3cnkrhla"]
+[gd_scene load_steps=8 format=3 uid="uid://lxsx3cnkrhla"]
 
+[ext_resource type="Script" uid="uid://duuoyofjmwh1h" path="res://Battle/Scripts/BattleManager.gd" id="1_m477q"]
 [ext_resource type="Texture2D" uid="uid://b2xly1ivnsbe1" path="res://Battle/B0_instruction/B0-background.png" id="1_uf6gr"]
 [ext_resource type="PackedScene" uid="uid://duokno1vhltyg" path="res://Scenes/UI/pause_menu.tscn" id="2_bkbki"]
 [ext_resource type="PackedScene" uid="uid://67k26hnvtih1" path="res://Battle/UI_Scene/battle_ui.tscn" id="3_m477q"]
 [ext_resource type="PackedScene" uid="uid://dr817iw32v0t3" path="res://Battle/CharacterScenes/garza_battle.tscn" id="4_ut1bh"]
+[ext_resource type="PackedScene" uid="uid://bkrfbx6s5vcb2" path="res://Battle/CharacterScenes/garza_mama.tscn" id="5_bkbki"]
+[ext_resource type="Resource" uid="uid://det0tufui30cw" path="res://Battle/B0_instruction/B0_enemy_chart.tres" id="7_ut1bh"]
 
 [node name="B0-instruction" type="Node2D"]
+script = ExtResource("1_m477q")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -16,7 +20,12 @@ texture = ExtResource("1_uf6gr")
 
 [node name="pause_menu" parent="UI" instance=ExtResource("2_bkbki")]
 
-[node name="Garza" parent="." instance=ExtResource("4_ut1bh")]
+[node name="player" parent="." instance=ExtResource("4_ut1bh")]
 position = Vector2(339, 634)
 
 [node name="BattleUI" parent="." instance=ExtResource("3_m477q")]
+
+[node name="enemy" parent="." instance=ExtResource("5_bkbki")]
+position = Vector2(1440, 650)
+scale = Vector2(1.1, 1.1)
+chart = ExtResource("7_ut1bh")
