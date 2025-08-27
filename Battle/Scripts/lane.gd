@@ -92,7 +92,7 @@ func note_target_time(note: NoteInstance):
 
 func handle_miss():
 	if ended: return
-	print("Miss! passed_time: ", passed_time, " ms. first_target_time:", first_target_time," ms.")
+	print("Miss!")
 	miss.emit()
 	remove_front_note()
 	

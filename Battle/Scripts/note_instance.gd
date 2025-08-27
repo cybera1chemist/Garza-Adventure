@@ -38,9 +38,9 @@ func _ready() -> void:
 	# Settle the position
 	position.x = 225 + (trail-1) * 210
 	if trail <= 4:
-		position.x -= 10
+		position.x -= 25
 	else:
-		position.x += 10
+		position.x += 25
 	position.y = -50
 	
 func _physics_process(delta: float) -> void:

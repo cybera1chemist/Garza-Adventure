@@ -20,56 +20,56 @@ chart = ExtResource("2_862p5")
 [node name="note槽" type="Node2D" parent="."]
 
 [node name="lane1" type="Sprite2D" parent="note槽"]
-position = Vector2(215, 970)
+position = Vector2(200, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 1
 
 [node name="lane2" type="Sprite2D" parent="note槽"]
-position = Vector2(425, 970)
+position = Vector2(410, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 2
 
 [node name="lane3" type="Sprite2D" parent="note槽"]
-position = Vector2(635, 970)
+position = Vector2(620, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 3
 
 [node name="lane4" type="Sprite2D" parent="note槽"]
-position = Vector2(845, 970)
+position = Vector2(830, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 4
 
 [node name="lane5" type="Sprite2D" parent="note槽"]
-position = Vector2(1075, 970)
+position = Vector2(1090, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 5
 
 [node name="lane6" type="Sprite2D" parent="note槽"]
-position = Vector2(1285, 970)
+position = Vector2(1300, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 6
 
 [node name="lane7" type="Sprite2D" parent="note槽"]
-position = Vector2(1495, 970)
+position = Vector2(1510, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")
 lane_id = 7
 
 [node name="lane8" type="Sprite2D" parent="note槽"]
-position = Vector2(1705, 970)
+position = Vector2(1720, 970)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_jlo34")
 script = ExtResource("4_357p8")

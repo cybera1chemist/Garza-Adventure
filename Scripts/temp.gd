@@ -6,4 +6,4 @@ extends CharacterBody2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		CurtainTransition.switch_scene("Battle/B0_instruction")
+		CurtainTransition.switch_scene("Battle/B0_instruction/B0_instruction")

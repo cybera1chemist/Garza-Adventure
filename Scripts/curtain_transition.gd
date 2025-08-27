@@ -25,8 +25,8 @@ func _deferred_switch_scene(res_path):
 	animation_player.play("curtains_close")
 	sfx_player_1.playing = true
 	await animation_player.animation_finished
-	
-	res_path = "res://Scenes/" + res_path + ".tscn"
+
+	res_path = "res://" + res_path + ".tscn"
 	current_scene.free()
 	var scene = load(res_path)
 	current_scene = scene.instantiate()

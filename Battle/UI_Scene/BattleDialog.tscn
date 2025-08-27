@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://d13evarmtjg1l"]
+
+[ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/DialogTheme.tres" id="1_q38vn"]
+[ext_resource type="Script" uid="uid://dusrjwqv4i4to" path="res://Scripts/DialogManager.gd" id="2_a7b6v"]
+[ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="3_4n5xf"]
+[ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="4_t8vpj"]
+[ext_resource type="AudioStream" uid="uid://c6pqjc05evs2j" path="res://SFX/TypingTween.wav" id="5_byptm"]
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q38vn")
+script = ExtResource("2_a7b6v")
+
+[node name="TextPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -206.0
+offset_right = 298.0
+offset_bottom = -6.0
+theme = ExtResource("1_q38vn")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="character_name" type="Label" parent="TextPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4n5xf")
+theme_override_font_sizes/font_size = 28
+text = "嘎子："
+
+[node name="text_content" type="Label" parent="TextPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(570, 105)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_t8vpj")
+theme_override_font_sizes/font_size = 26
+text = "大家好，我是嘎子，哈哈哈哈， 我讲了很多话，测试一下autowrap怎么样，呵呵哈哈哈哈，黑黑黑黑黑黑红红火火恍恍惚惚哈啦啦啦"
+autowrap_mode = 3
+
+[node name="PressSpace" type="Label" parent="TextPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.32, 0.32, 1)
+theme_override_font_sizes/font_size = 16
+text = "（按空格键继续）"
+horizontal_alignment = 2
+
+[node name="TypingSFX" type="AudioStreamPlayer2D" parent="TextPanel"]
+stream = ExtResource("5_byptm")

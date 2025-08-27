@@ -7,8 +7,7 @@ extends NoteInstance
 @onready var body: Sprite2D = $NoteSprite/BodySprite
 @onready var head: Sprite2D = $NoteSprite/HeadSprite
 
-var is_judging_perfect: bool = false
-var is_judging_good: bool = false
+var is_judging: bool = false
 
 func _ready() -> void:
 	missed_sprite = $MissedSprite
@@ -16,6 +15,7 @@ func _ready() -> void:
 	note_sprite.visible = true
 	missed_sprite.visible = false
 	judged = false
+	is_judging = false
 	
 	# check parameters
 	if trail < 1 or trail > 8:
@@ -25,9 +25,9 @@ func _ready() -> void:
 	# Settle the position
 	position.x = 225 + (trail-1) * 210
 	if trail <= 4:
-		position.x -= 10
+		position.x -= 25
 	else:
-		position.x += 10
+		position.x += 25
 	position.y = -50
 	tail.position.y = (70 - length) / 0.6
 	tail_tapped.position = tail.position
@@ -43,6 +43,21 @@ func _physics_process(delta: float) -> void:
 		call_deferred("handle_miss")
 	if position.y + tail.position.y > 1120:
 		call_deferred("queue_free")
+		
+	if is_judging:
+		pass
+		
+func handle_perfect():
+	judged = true
+	call_deferred("queue_free")
+	
+func handle_good():
+	judged = true
+	call_deferred("queue_free")
+	
+func handle_bad():
+	judged = true
+	call_deferred("queue_free")
 
 func handle_miss():
 	miss.emit()
