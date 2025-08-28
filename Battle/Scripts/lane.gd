@@ -28,11 +28,6 @@ var cur_note: int
 var started: bool
 var ended: bool
 
-signal perfect
-signal good
-signal bad
-signal miss
-
 func _ready() -> void:
 	cur_note = 0
 	started = false
@@ -60,22 +55,20 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(action):
 		if upcoming_notes.size() > 0:
 			old_note = upcoming_notes[0]
+		if old_note.judged: return
 		if upcoming_notes.size() >= 1:
 			first_target_time = note_target_time(old_note)
 		if abs(first_target_time - time) <= PERFECT_DIFF:
-			perfect.emit()
 			print("Perfect! Beat: ", old_note.beat)
 			remove_front_note()
 			old_note.handle_perfect()
 		elif abs(first_target_time - time) <= GOOD_DIFF:
 			print("Good! Beat: ", old_note.beat)
-			good.emit()
 			remove_front_note()
 			old_note.handle_good()
 		elif abs(first_target_time - time) <= BAD_DIFF:
 			print("Bad! Beat: ", old_note.beat)
 			remove_front_note()
-			bad.emit()
 			old_note.handle_bad()
 
 func remove_front_note():
@@ -90,9 +83,8 @@ func note_target_time(note: NoteInstance):
 	# unit: millisecond
 	return 1/chart.bpm * (note.beat+chart.offset) * 60 * 1000
 
-func handle_miss():
+func handle_dropped():
 	if ended: return
 	print("Miss!")
-	miss.emit()
 	remove_front_note()
 	

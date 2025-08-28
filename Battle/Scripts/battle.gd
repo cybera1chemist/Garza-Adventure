@@ -72,10 +72,6 @@ func _ready() -> void:
 	
 	for lane in lanes:
 		music_start.connect(lane.on_music_start)
-		lane.perfect.connect(on_perfect)
-		lane.good.connect(on_good)
-		lane.bad.connect(on_bad)
-		lane.miss.connect(on_miss)
 		lane.chart = chart
 		spawn_note_complete.connect(lane.on_spawn_note_complete)
 	music_start.emit()
@@ -112,15 +108,24 @@ func spawn_note(beat, length, trail):
 		var note_scene := preload("res://Battle/UI_Scene/HoldNote.tscn")
 		note = note_scene.instantiate()
 		var actual_length :float = length * (60/bpm) * flow_speed
-		note.length = actual_length
+		note.length = length
+		note.actual_length = actual_length
 	
 	note.flow_speed = flow_speed	
 	note.trail = trail
 	note.beat = beat
+	note.bpm = bpm
 	
 	if lanes[trail-1] == null:
 		print("Error! lane object is null")
-	note.miss.connect(lanes[trail-1].handle_miss)
+	# connect every note to battle.gd
+	note.perfect.connect(on_perfect)
+	note.good.connect(on_good)
+	note.bad.connect(on_bad)
+	note.miss.connect(on_miss)
+	note.dropped.connect(on_miss)
+	
+	note.dropped.connect(lanes[trail-1].handle_dropped)  
 	lanes[trail-1].upcoming_notes.append(note)
 	
 	await timer.timeout

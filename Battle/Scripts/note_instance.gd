@@ -17,7 +17,14 @@ var note_sprite: Node2D
 
 const TARGET_Y: float = 970.0
 
+var bpm: float = 158
+var actual_length: float # This is only useful for hold notes
+
+signal perfect
+signal good
+signal bad
 signal miss
+signal dropped
 
 var judged: bool
 
@@ -47,18 +54,26 @@ func _physics_process(delta: float) -> void:
 	if judged: return
 	position.y += delta * flow_speed
 	if position.y > 1120:
-		miss.emit()
-		judged = true
+		dropped.emit()
 		call_deferred("queue_free")
 
 func handle_perfect():
 	judged = true
+	perfect.emit()
 	call_deferred("queue_free")
 	
 func handle_good():
 	judged = true
+	good.emit()
 	call_deferred("queue_free")
 	
 func handle_bad():
 	judged = true
+	bad.emit()
+	call_deferred("queue_free")
+	
+func handle_miss():
+	print("You missed a note! ", beat)
+	judged = true
+	miss.emit()
 	call_deferred("queue_free")

@@ -31,7 +31,6 @@ texture = ExtResource("6_bkrre")
 scale = Vector2(0.6, 0.6)
 
 [node name="TailSprite" type="Sprite2D" parent="NoteSprite"]
-position = Vector2(0, -10)
 texture = ExtResource("4_jq633")
 
 [node name="BodySprite" type="Sprite2D" parent="NoteSprite"]
