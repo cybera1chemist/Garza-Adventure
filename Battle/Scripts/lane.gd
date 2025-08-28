@@ -48,7 +48,7 @@ func on_spawn_note_complete():
 	started = true
 
 # Engine.iterations_per_second
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	passed_time = (Time.get_ticks_usec() - begin_time)/1000 # unit: millisecond
 	passed_time -= music_delay_time * 1000
 	passed_time = max(0, passed_time)

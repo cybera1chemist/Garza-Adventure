@@ -17,6 +17,8 @@ var cur_time: float
 var note_idx: int = 0
 var cur_beat: float = 0.0
 
+var started: bool
+
 func _ready() -> void:
 	# Read chart
 	notes = chart.notes
@@ -25,13 +27,16 @@ func _ready() -> void:
 	
 	note_idx = 0
 	cur_beat = 0
+	started = false
 	ani.play("Idle")
 	
 func on_battle_start():
 	begin_time = Time.get_ticks_msec()
 	music_delay_time = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
+	started = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if not started: return
 	cur_time = (Time.get_ticks_msec() - begin_time)/1000 - music_delay_time # unit: second
 	if note_idx >= len(notes):
 		change_ani("Idle")

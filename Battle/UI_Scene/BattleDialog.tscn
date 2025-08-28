@@ -1,12 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://d13evarmtjg1l"]
 
 [ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/DialogTheme.tres" id="1_q38vn"]
-[ext_resource type="Script" uid="uid://dusrjwqv4i4to" path="res://Scripts/DialogManager.gd" id="2_a7b6v"]
+[ext_resource type="Script" uid="uid://dl242lxkxu2c8" path="res://Battle/Scripts/BattleDialog.gd" id="2_hjxjo"]
 [ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="3_4n5xf"]
 [ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="4_t8vpj"]
 [ext_resource type="AudioStream" uid="uid://c6pqjc05evs2j" path="res://SFX/TypingTween.wav" id="5_byptm"]
 
-[node name="Dialog" type="Control"]
+[node name="BattleDialog" type="Control"]
+z_index = -2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_q38vn")
-script = ExtResource("2_a7b6v")
+script = ExtResource("2_hjxjo")
 
 [node name="TextPanel" type="Panel" parent="."]
 layout_mode = 0
@@ -62,3 +63,6 @@ horizontal_alignment = 2
 
 [node name="TypingSFX" type="AudioStreamPlayer2D" parent="TextPanel"]
 stream = ExtResource("5_byptm")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

@@ -1,20 +1,114 @@
-[gd_scene load_steps=8 format=3 uid="uid://lxsx3cnkrhla"]
+[gd_scene load_steps=23 format=3 uid="uid://lxsx3cnkrhla"]
 
-[ext_resource type="Script" uid="uid://duuoyofjmwh1h" path="res://Battle/Scripts/BattleManager.gd" id="1_m477q"]
+[ext_resource type="Script" uid="uid://duuoyofjmwh1h" path="res://Battle/B0_instruction/B0.gd" id="1_m477q"]
 [ext_resource type="Texture2D" uid="uid://b2xly1ivnsbe1" path="res://Battle/B0_instruction/B0-background.png" id="1_uf6gr"]
 [ext_resource type="PackedScene" uid="uid://duokno1vhltyg" path="res://Scenes/UI/pause_menu.tscn" id="2_bkbki"]
+[ext_resource type="PackedScene" uid="uid://d13evarmtjg1l" path="res://Battle/UI_Scene/BattleDialog.tscn" id="3_ggsvh"]
 [ext_resource type="PackedScene" uid="uid://67k26hnvtih1" path="res://Battle/UI_Scene/battle_ui.tscn" id="3_m477q"]
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="4_fsio5"]
 [ext_resource type="PackedScene" uid="uid://dr817iw32v0t3" path="res://Battle/CharacterScenes/garza_battle.tscn" id="4_ut1bh"]
 [ext_resource type="PackedScene" uid="uid://bkrfbx6s5vcb2" path="res://Battle/CharacterScenes/garza_mama.tscn" id="5_bkbki"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="5_usjo7"]
 [ext_resource type="Resource" uid="uid://det0tufui30cw" path="res://Battle/B0_instruction/B0_enemy_chart.tres" id="7_ut1bh"]
+
+[sub_resource type="Resource" id="Resource_n2mkp"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子："
+content = "咦……咦！？？？我怎么变成这种画风了？？？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_fsio5"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子的妈妈："
+content = "现在，请将你的左手的四根手指分别放在键盘上的A、S、D、F键上。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_usjo7"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子："
+content = "啊？哪有ASDF键啊？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_nccgb"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子的妈妈："
+content = "然后，将你的右手四根手指分别放在键盘上的J、K、L、；键上。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_pbe70"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子："
+content = "……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_j1g31"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子的妈妈："
+content = "很好，看来你已经准备好了。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_vdhqb"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子的妈妈："
+content = "接下来，请注意屏幕上方掉落的蓝色音符，在它即将掉落到灰色音符槽时，按下键盘上对应的按键即可。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_whu01"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子的妈妈："
+content = "我们先来弹几个简单的音符试试。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_6skq7"]
+script = ExtResource("5_usjo7")
+dialog_list = Array[ExtResource("4_fsio5")]([SubResource("Resource_n2mkp"), SubResource("Resource_fsio5"), SubResource("Resource_usjo7"), SubResource("Resource_nccgb"), SubResource("Resource_pbe70"), SubResource("Resource_j1g31"), SubResource("Resource_vdhqb"), SubResource("Resource_whu01")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"
+
+[sub_resource type="Resource" id="Resource_wp7s5"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子的妈妈："
+content = "看来你已经掌握要领了，接下来我们演奏一首简单的小曲试试。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_axo0m"]
+script = ExtResource("4_fsio5")
+character_name = "嘎子："
+content = "……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_nu128"]
+script = ExtResource("5_usjo7")
+dialog_list = Array[ExtResource("4_fsio5")]([SubResource("Resource_wp7s5"), SubResource("Resource_axo0m")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"
 
 [node name="B0-instruction" type="Node2D"]
 script = ExtResource("1_m477q")
 
 [node name="background" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(960, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("1_uf6gr")
+
+[node name="Dialogs" type="Node" parent="."]
+
+[node name="dialog-beginning" parent="Dialogs" instance=ExtResource("3_ggsvh")]
+offset_left = 740.0
+offset_top = 460.0
+offset_right = 740.0
+offset_bottom = 460.0
+atBeginning = true
+bpm = 158
+dialog_group = SubResource("Resource_6skq7")
+
+[node name="dialog_middle" parent="Dialogs" instance=ExtResource("3_ggsvh")]
+offset_left = 1067.0
+offset_top = 625.0
+offset_right = 1067.0
+offset_bottom = 625.0
+waiting_beat = 42.0
+bpm = 158
+dialog_group = SubResource("Resource_nu128")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
