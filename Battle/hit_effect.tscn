@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjuo8m2dao6ay"]
+
+[ext_resource type="Texture2D" uid="uid://40fcjgy8gn8n" path="res://Assets/Arts/Effects/heart_particle_perfect.png" id="1_fkxtr"]
+[ext_resource type="Script" uid="uid://b7npaoa71old8" path="res://Battle/Scripts/hit_effect.gd" id="1_l73xk"]
+[ext_resource type="Texture2D" uid="uid://bx1nvr5tg2l5e" path="res://Assets/Arts/Effects/ring_perfect.png" id="2_whuwy"]
+[ext_resource type="Texture2D" uid="uid://dw77ea0ijl3fu" path="res://Assets/Arts/Effects/heart_ring_perfect.png" id="4_whuwy"]
+
+[sub_resource type="Gradient" id="Gradient_dks38"]
+colors = PackedColorArray(1, 1, 1, 0.498039, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l73xk"]
+gradient = SubResource("Gradient_dks38")
+
+[sub_resource type="Curve" id="Curve_l73xk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.194517, 0.0246189), 0.0, 0.0, 0, 0, Vector2(0.345953, 0.309105), 0.0, 0.0, 0, 0, Vector2(0.711488, 0.751075), 0.0, 0.0, 0, 0, Vector2(0.870757, 0.959359), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_whuwy"]
+curve = SubResource("Curve_l73xk")
+
+[sub_resource type="Curve" id="Curve_whuwy"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.00391645, 200), 0.0, 0.0, 0, 0, Vector2(0.604439, 175.615), 0.0, 0.0, 0, 0, Vector2(0.776762, 138.023), 0.0, 0.0, 0, 0, Vector2(0.920365, 70.9652), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_dyjig"]
+texture_mode = 1
+curve = SubResource("Curve_whuwy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_whuwy"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 2
+emission_sphere_radius = 60.0
+spread = 0.0
+radial_velocity_min = 200.0
+radial_velocity_max = 200.0
+velocity_limit_curve = SubResource("CurveTexture_dyjig")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_whuwy")
+color_initial_ramp = SubResource("GradientTexture1D_l73xk")
+hue_variation_min = -0.03
+hue_variation_max = 0.03
+
+[node name="HitEffect" type="Node2D"]
+script = ExtResource("1_l73xk")
+angular_v = 2.0
+
+[node name="Ring" type="Sprite2D" parent="."]
+texture = ExtResource("2_whuwy")
+
+[node name="scatter_particles" type="GPUParticles2D" parent="."]
+amount = 12
+texture = ExtResource("1_fkxtr")
+lifetime = 0.3
+explosiveness = 1.0
+use_fixed_seed = true
+seed = 3207082301
+process_material = SubResource("ParticleProcessMaterial_whuwy")
+
+[node name="HeartRing" type="Sprite2D" parent="."]
+texture = ExtResource("4_whuwy")
+offset = Vector2(0, 6)

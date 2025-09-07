@@ -12,6 +12,7 @@ var action: String
 
 var is_judging_perfect: bool = false
 var is_judging_good: bool = false
+var disappeared: bool = false
 
 var scale_y: float
 var new_scale_y: float
@@ -19,6 +20,13 @@ var new_scale_y: float
 func _ready() -> void:
 	missed_sprite = $MissedSprite
 	note_sprite = $NoteSprite
+	sfx_player = $SFXPlayer
+	timer = $Timer
+	
+	# Initialize effects
+	effect = $HitEffect
+	effect.short = false
+	
 	note_sprite.visible = true
 	missed_sprite.visible = false
 	judged = false
@@ -55,18 +63,24 @@ func _physics_process(delta: float) -> void:
 		if position.y + tail.position.y > 1120:
 			call_deferred("queue_free")
 	else:
-		new_scale_y -= (scale_y+1) * delta / (length*60/bpm)
-		tail.position.y += delta * flow_speed / 0.6
-		tail_tapped.position = tail.position
-		body.scale = Vector2(1, new_scale_y)
-		body_tapped.scale = body.scale
-		if head.position.y <= tail.position.y - 20:
+		# adjust position
+		if position.y < TARGET_Y:
+			position.y += delta * flow_speed
+		else:
+			new_scale_y -= (scale_y+1) * delta / (length*60/bpm)
+			tail.position.y += delta * flow_speed / 0.6
+			tail_tapped.position = tail.position
+			body.scale = Vector2(1, new_scale_y)
+			body_tapped.scale = body.scale
+		if head.position.y <= tail.position.y - 50:
 			if not judged:
 				if is_judging_perfect:
 					perfect.emit()
 				elif is_judging_good:
 					good.emit()
-			call_deferred("queue_free")
+				judged = true
+		if head.position.y <= tail.position.y:
+			call_deferred("disappear")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if judged: return
@@ -76,14 +90,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func handle_perfect():
 	if judged: return
+	sfx_player.play()
 	is_judging_perfect = true
+	effect.perfect = true
+	effect.play()
 
 func handle_good():
 	if judged: return
+	sfx_player.play()
 	is_judging_good = true
+	effect.perfect = false
+	effect.play()
 
 func handle_bad():
 	if judged: return
+	sfx_player.play()
 	bad.emit()
 	judged = true
 	missed_sprite.visible = true
@@ -96,9 +117,26 @@ func handle_miss():
 	miss.emit()
 	missed_sprite.visible = true
 	note_sprite.visible = false
+	effect.stop()
 
 func handle_drop():
 	dropped.emit()
 	judged = true
 	missed_sprite.visible = true
 	note_sprite.visible = false
+
+
+func disappear():
+	if disappeared: return
+	disappeared = true
+	missed_sprite.visible = false
+	note_sprite.visible = false
+	
+	timer.start()
+	await timer.timeout
+	if effect:
+		effect.stop()
+	
+	timer.start()
+	await timer.timeout
+	call_deferred("queue_free")

@@ -1,3 +1,6 @@
+# Tip: this script only about things that only happen in battle-0
+# anything that's general accross all battles should be in battle.gd!
+
 extends Node2D
 
 @onready var enemy: AnimatedSprite2D = $enemy

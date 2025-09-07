@@ -180,6 +180,7 @@ _data = {
 }
 
 [node name="curtain_transition" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_olgi8")
 
 [node name="Curtain_left" type="Sprite2D" parent="."]

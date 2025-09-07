@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dlxpdeoscjpem"]
+
+[ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="1_lv3n7"]
+[ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="1_wm421"]
+
+[resource]
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_wm421")
+HBoxContainer/constants/separation = 20
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 35
+Label/fonts/font = ExtResource("1_lv3n7")
+VBoxContainer/constants/separation = 15

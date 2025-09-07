@@ -27,6 +27,7 @@ _data = {
 }
 
 [node name="BlackTransition" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_16bag")
 
 [node name="black" type="ColorRect" parent="."]
@@ -36,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

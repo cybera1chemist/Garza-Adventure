@@ -6,6 +6,9 @@ class_name NoteInstance
 #@onready var note_sprite: Node2D = $NoteSprite
 var missed_sprite: Node2D
 var note_sprite: Node2D
+var sfx_player: AudioStreamPlayer
+var timer: Timer
+var effect: Node2D
 
 # If length == 0, then it's a short note;
 # Otherwise it's a hold note.
@@ -31,6 +34,14 @@ var judged: bool
 func _ready() -> void:
 	missed_sprite = $MissedSprite
 	note_sprite= $NoteSprite
+	sfx_player = $SFXPlayer
+	timer = $Timer
+	
+	# Initialize effects
+	effect = $HitEffect
+	effect.short = true
+	perfect.connect(effect.on_perfect)
+	good.connect(effect.on_good)
 	
 	note_sprite.visible = true
 	missed_sprite.visible = false
@@ -58,22 +69,39 @@ func _physics_process(delta: float) -> void:
 		call_deferred("queue_free")
 
 func handle_perfect():
+	sfx_player.play()
 	judged = true
+	effect.position.y = TARGET_Y-position.y
 	perfect.emit()
-	call_deferred("queue_free")
+	disapear()
 	
 func handle_good():
+	sfx_player.play()
 	judged = true
+	effect.position.y = TARGET_Y-position.y
 	good.emit()
-	call_deferred("queue_free")
+	disapear()
 	
 func handle_bad():
+	sfx_player.play()
 	judged = true
 	bad.emit()
-	call_deferred("queue_free")
+	disapear()
 	
 func handle_miss():
-	print("You missed a note! ", beat)
+	print("You missed a short note! ", beat)
 	judged = true
 	miss.emit()
+	call_deferred("queue_free")
+	
+func disapear():
+	missed_sprite.visible = false
+	note_sprite.visible = false
+	
+	timer.start()
+	await timer.timeout
+	effect.stop()
+	
+	timer.start()
+	await timer.timeout
 	call_deferred("queue_free")

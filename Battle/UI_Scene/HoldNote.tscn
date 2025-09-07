@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2c4kj6inqlqs"]
+[gd_scene load_steps=10 format=3 uid="uid://d2c4kj6inqlqs"]
 
 [ext_resource type="Script" uid="uid://bnfe5y3o7jxyy" path="res://Battle/Scripts/hold_note.gd" id="1_gynxh"]
 [ext_resource type="Texture2D" uid="uid://uvv4y6kfb3nn" path="res://Battle/art/TappedTail.png" id="2_jq633"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dlwgyitpfb2wv" path="res://Battle/art/NoteTail.png" id="4_jq633"]
 [ext_resource type="Texture2D" uid="uid://5i07pkxtwpci" path="res://Battle/art/TappedBody.png" id="4_m4old"]
 [ext_resource type="Texture2D" uid="uid://bfxir6u2kysty" path="res://Battle/art/TappedHead.png" id="6_bkrre"]
+[ext_resource type="AudioStream" uid="uid://csu5jjy361vqn" path="res://Battle/hit.wav" id="8_m4old"]
+[ext_resource type="PackedScene" uid="uid://bjuo8m2dao6ay" path="res://Battle/hit_effect.tscn" id="9_bkrre"]
 
 [node name="HoldNote" type="Node2D"]
 script = ExtResource("1_gynxh")
@@ -41,3 +43,13 @@ offset = Vector2(0, -28)
 
 [node name="HeadSprite" type="Sprite2D" parent="NoteSprite"]
 texture = ExtResource("2_pwnvl")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_m4old")
+
+[node name="HitEffect" parent="." instance=ExtResource("9_bkrre")]
+scale = Vector2(1.32, 1.32)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

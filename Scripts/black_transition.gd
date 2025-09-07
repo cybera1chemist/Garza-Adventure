@@ -6,6 +6,7 @@ extends CanvasLayer
 var current_scene = null
 
 func _ready() -> void:
+	visible = true
 	black.modulate.a = 0
 	
 	var root = get_tree().root

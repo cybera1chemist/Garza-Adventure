@@ -1,5 +1,6 @@
 extends Control
 
+@export var battle_id: int
 @export var chart: NoteChart
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
@@ -19,11 +20,6 @@ var lanes: Array[Lane]
 # Labels
 @onready var score_label: Label = $ScoreLabel
 @onready var combo_label: Label = $ComboLabel
-@onready var perfect_label: Label = $ForTestOnly/perfect
-@onready var good_label: Label = $ForTestOnly/good
-@onready var bad_label: Label = $ForTestOnly/bad
-@onready var miss_label: Label = $ForTestOnly/miss
-
 
 # constant
 const MAX_SCORE: float = 1000000.0
@@ -31,6 +27,7 @@ const TARGET_Y: float = 970.0
 const PERFECT_DIFF: float = 80.0 # unit: mili-second
 const GOOD_DIFF: float = 160.0
 const BAD_DIFF: float = 180.0
+const combo_factor: float = 0.05
 
 # music
 var bpm: float
@@ -39,18 +36,19 @@ var music_length: float
 var flow_speed: float
 var offset: int
 
-# gameplay
+# information during playing
 var cur_combo: int = 0
 var cur_score: float = 0.0
 var score_per_perfect: float
 var score_per_good: float
-const combo_factor: float = 0.05
 var num_perfect: int = 0
 var num_good: int = 0
 var num_bad: int = 0
 var num_miss: int = 0
+var FC: bool = true
 
 var music_delay_time: float
+var started: bool = false
 
 signal music_start
 signal spawn_note_complete
@@ -78,10 +76,10 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	combo_label.text = "Combo: " + str(cur_combo)
-	perfect_label.text = "Perfect: " + str(num_perfect)
-	good_label.text = "Good: " + str(num_good)
-	bad_label.text = "Bad: " + str(num_bad)
-	miss_label.text = "Miss: " + str(num_miss)
+
+	if started and !audio_player.playing:
+		call_deferred("switch_clear_scene")
+	
 	
 func on_battle_start():
 	music_start.emit()
@@ -90,6 +88,7 @@ func on_battle_start():
 	for note in chart.notes:
 		spawn_note(note.beat, note.length, note.trail)
 	spawn_note_complete.emit()
+	started = true
 
 
 func spawn_note(beat, length, trail):
@@ -150,8 +149,32 @@ func on_good():
 func on_bad():
 	num_bad += 1
 	cur_combo = 0
+	FC = false
 	
 func on_miss():
 	num_miss += 1
 	cur_combo = 0
+	FC = false
 	
+func switch_clear_scene():
+	# load clear scene
+	var clear_packed_scene = preload("res://Battle/UI_Scene/battle_clear.tscn")
+	var clear_scene = clear_packed_scene.instantiate()
+	clear_scene.battle_id = battle_id
+	clear_scene.perfect = num_perfect
+	clear_scene.good = num_good
+	clear_scene.bad = num_bad
+	clear_scene.miss = num_miss
+	clear_scene.FC = FC
+	clear_scene.score = cur_score
+	
+	# wait for sometime
+	var timer = get_tree().create_timer(3)
+	await timer.timeout
+	
+	# free cur_scene and switch
+	var root = get_tree().root
+	var cur_scene = root.get_child(root.get_child_count()-1)
+	root.add_child(clear_scene)
+	get_tree().current_scene = clear_scene
+	cur_scene.free()

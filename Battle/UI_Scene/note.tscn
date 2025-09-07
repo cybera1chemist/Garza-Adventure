@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://pkbh6kcshlcb"]
+[gd_scene load_steps=6 format=3 uid="uid://pkbh6kcshlcb"]
 
 [ext_resource type="Texture2D" uid="uid://dlwgyitpfb2wv" path="res://Battle/art/NoteTail.png" id="1_plejv"]
 [ext_resource type="Script" uid="uid://cq4x88gktkklf" path="res://Battle/Scripts/note_instance.gd" id="1_ulyw1"]
 [ext_resource type="Texture2D" uid="uid://uvv4y6kfb3nn" path="res://Battle/art/TappedTail.png" id="2_ulyw1"]
+[ext_resource type="AudioStream" uid="uid://csu5jjy361vqn" path="res://Battle/hit.wav" id="4_h4c8d"]
+[ext_resource type="PackedScene" uid="uid://bjuo8m2dao6ay" path="res://Battle/hit_effect.tscn" id="5_gnjko"]
 
 [node name="note" type="Node2D"]
 scale = Vector2(0.6, 0.6)
@@ -17,3 +19,13 @@ texture = ExtResource("2_ulyw1")
 
 [node name="Note" type="Sprite2D" parent="NoteSprite"]
 texture = ExtResource("1_plejv")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h4c8d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="HitEffect" parent="." instance=ExtResource("5_gnjko")]
+scale = Vector2(2.2, 2.2)

@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfnr67th52dda"]
+
+[ext_resource type="Script" uid="uid://bppcahvygp4nt" path="res://Battle/Scripts/clear_battle.gd" id="1_aba54"]
+[ext_resource type="Shader" uid="uid://dabx7dynxw6w" path="res://Shader/dark_gau_blur.gdshader" id="2_a017k"]
+[ext_resource type="Texture2D" uid="uid://cc308c2yfdga4" path="res://Battle/paintings/0.png" id="2_kqpij"]
+[ext_resource type="Theme" uid="uid://dlxpdeoscjpem" path="res://Assets/Themes/clear_theme.tres" id="4_a017k"]
+[ext_resource type="FontFile" uid="uid://d1hnib6r82i5w" path="res://Assets/UI/Fonts/霸气手写英文.ttf" id="5_eskdu"]
+[ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="6_spfcw"]
+[ext_resource type="Texture2D" uid="uid://cj0f5gimlwsn7" path="res://Assets/UI/icons/ProceedButton.png" id="7_l8plp"]
+[ext_resource type="Texture2D" uid="uid://dqa0qx1w3mclx" path="res://Assets/UI/icons/RestartButton.png" id="8_vy5km"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eskdu"]
+shader = ExtResource("2_a017k")
+shader_parameter/strength = 12.0
+shader_parameter/mix_percentage = 0.6
+
+[node name="BattleClear" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_aba54")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_kqpij")
+offset = Vector2(960, 540)
+
+[node name="blur" type="ColorRect" parent="background"]
+material = SubResource("ShaderMaterial_eskdu")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="level" type="Label" parent="."]
+layout_mode = 2
+offset_left = 285.0
+offset_top = 200.0
+offset_right = 522.0
+offset_bottom = 554.0
+pivot_offset = Vector2(118.5, 177)
+theme_override_colors/font_shadow_color = Color(0.56, 0, 0.494667, 0.482353)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("5_eskdu")
+theme_override_font_sizes/font_size = 150
+text = "AP"
+horizontal_alignment = 1
+
+[node name="battle_results" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 561.0
+offset_right = 526.0
+offset_bottom = 823.0
+mouse_filter = 2
+theme = ExtResource("4_a017k")
+theme_override_constants/separation = 30
+
+[node name="score" type="Label" parent="battle_results"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1000000"
+horizontal_alignment = 1
+
+[node name="4data" type="HBoxContainer" parent="battle_results"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="perfect&bad" type="VBoxContainer" parent="battle_results/4data"]
+layout_mode = 2
+
+[node name="perfect" type="HBoxContainer" parent="battle_results/4data/perfect&bad"]
+layout_mode = 2
+
+[node name="perfect_label" type="Label" parent="battle_results/4data/perfect&bad/perfect"]
+layout_mode = 2
+theme = ExtResource("4_a017k")
+text = "perfect"
+
+[node name="bad" type="HBoxContainer" parent="battle_results/4data/perfect&bad"]
+layout_mode = 2
+
+[node name="bad_label" type="Label" parent="battle_results/4data/perfect&bad/bad"]
+layout_mode = 2
+text = "bad"
+
+[node name="good&miss" type="VBoxContainer" parent="battle_results/4data"]
+layout_mode = 2
+
+[node name="good" type="HBoxContainer" parent="battle_results/4data/good&miss"]
+layout_mode = 2
+
+[node name="good_label" type="Label" parent="battle_results/4data/good&miss/good"]
+layout_mode = 2
+text = "good"
+
+[node name="miss" type="HBoxContainer" parent="battle_results/4data/good&miss"]
+layout_mode = 2
+
+[node name="miss_label" type="Label" parent="battle_results/4data/good&miss/miss"]
+layout_mode = 2
+text = "miss:"
+
+[node name="painting" type="Sprite2D" parent="."]
+position = Vector2(1321, 401)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kqpij")
+
+[node name="RestartButton" type="Button" parent="."]
+z_index = 100
+layout_mode = 0
+offset_left = 31.0
+offset_top = 901.0
+offset_right = 370.0
+offset_bottom = 1068.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("6_spfcw")
+theme_override_font_sizes/font_size = 50
+text = "重新开始"
+icon = ExtResource("8_vy5km")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="ProceedButton" type="Button" parent="."]
+z_index = 100
+layout_mode = 0
+offset_left = 1570.0
+offset_top = 902.0
+offset_right = 1909.0
+offset_bottom = 1069.0
+focus_neighbor_left = NodePath("../RestartButton")
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("6_spfcw")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+button_mask = 7
+text = "继续前进"
+icon = ExtResource("7_l8plp")
+flat = true
+alignment = 0
+icon_alignment = 2
+expand_icon = true

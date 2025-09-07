@@ -111,7 +111,7 @@ position = Vector2(-214, 136.5)
 shape = SubResource("RectangleShape2D_s58dy")
 
 [node name="Garza" parent="." instance=ExtResource("3_l1axm")]
-position = Vector2(-54, 174)
+position = Vector2(-49, 293)
 CMR_limit_left = -960
 CMR_limit_right = 2000
 CMR_limit_top = -5000
@@ -145,5 +145,13 @@ texture = ExtResource("2_l1axm")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="UI" instance=ExtResource("4_8766m")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 100
+offset_left = -1349.0
+offset_top = -641.0
+offset_right = 1173.0
+offset_bottom = 801.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="Jwt/Area2D" to="Jwt" method="_on_area_2d_body_entered"]
