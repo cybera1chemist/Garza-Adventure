@@ -1,0 +1,193 @@
+[gd_scene load_steps=22 format=3 uid="uid://bn0ywylppwp4i"]
+
+[ext_resource type="Script" uid="uid://h2srfxdojqd2" path="res://Scenes/StartMenu/StartMenu.gd" id="1_w0edo"]
+[ext_resource type="Texture2D" uid="uid://cqs548rfdo1wj" path="res://Scenes/StartMenu/StartMenu-BG.png" id="2_7pcjq"]
+[ext_resource type="Texture2D" uid="uid://d07aggjsvxbg5" path="res://Scenes/StartMenu/Logo.png" id="3_qdyqh"]
+[ext_resource type="Theme" uid="uid://cykyy3bf7limj" path="res://Assets/Themes/default_ui_theme.tres" id="4_h6gk2"]
+[ext_resource type="Texture2D" uid="uid://cmwm4h10ym1c6" path="res://Scenes/StartMenu/狗.png" id="5_2vk6u"]
+[ext_resource type="Texture2D" uid="uid://mu3dy5ohg1io" path="res://Scenes/StartMenu/Garza/嘎子-1.png" id="5_enayw"]
+[ext_resource type="Texture2D" uid="uid://dej6qcbibkvlx" path="res://Scenes/StartMenu/Garza/嘎子-2.png" id="6_2vk6u"]
+[ext_resource type="Texture2D" uid="uid://db251w3pu02km" path="res://Scenes/StartMenu/Garza/嘎子-3.png" id="7_lq4uu"]
+[ext_resource type="Texture2D" uid="uid://cn35dxft5wh5e" path="res://Scenes/StartMenu/羊.png" id="7_w7xna"]
+[ext_resource type="Texture2D" uid="uid://ccqqe7tjtc7qn" path="res://Scenes/StartMenu/Garza/嘎子-4.png" id="8_w7xna"]
+[ext_resource type="Script" uid="uid://vh8x78jnaauh" path="res://Scenes/StartMenu/floating.gd" id="9_7pcjq"]
+[ext_resource type="Texture2D" uid="uid://bbaimj65ej43p" path="res://Scenes/StartMenu/Garza/嘎子-5.png" id="9_821u5"]
+[ext_resource type="Texture2D" uid="uid://dldw3qwsr5fgj" path="res://Scenes/StartMenu/Garza/嘎子-6.png" id="10_4o5v6"]
+[ext_resource type="Texture2D" uid="uid://lum0amg6asj" path="res://Scenes/StartMenu/Garza/嘎子-7.png" id="11_fhld8"]
+[ext_resource type="Texture2D" uid="uid://ffkho0qdut4k" path="res://Scenes/StartMenu/恐龙.png" id="15_821u5"]
+[ext_resource type="Texture2D" uid="uid://dar4m0mtrh4qr" path="res://Scenes/StartMenu/滤镜.png" id="16_4o5v6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vk6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2vk6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lq4uu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_w7xna")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7xna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_821u5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_db7fk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_enayw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2vk6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lq4uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w7xna")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4gob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4o5v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fhld8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4o5v6")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_821u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4o5v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fhld8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4o5v6")
+}, {
+"duration": 20.0,
+"texture": ExtResource("9_821u5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0edo")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("2_7pcjq")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="狗" type="AnimatedSprite2D" parent="Characters"]
+position = Vector2(1212, 360)
+sprite_frames = SubResource("SpriteFrames_2vk6u")
+autoplay = "default"
+script = ExtResource("9_7pcjq")
+
+[node name="羊" type="AnimatedSprite2D" parent="Characters"]
+position = Vector2(903, 548)
+sprite_frames = SubResource("SpriteFrames_lq4uu")
+script = ExtResource("9_7pcjq")
+
+[node name="恐龙" type="AnimatedSprite2D" parent="Characters"]
+position = Vector2(1677, 248)
+sprite_frames = SubResource("SpriteFrames_w7xna")
+script = ExtResource("9_7pcjq")
+
+[node name="Garza" type="AnimatedSprite2D" parent="Characters"]
+position = Vector2(1254, 867)
+sprite_frames = SubResource("SpriteFrames_db7fk")
+autoplay = "default"
+frame_progress = 0.2815164
+script = ExtResource("9_7pcjq")
+
+[node name="Garza\'sEyes" type="AnimatedSprite2D" parent="Characters/Garza"]
+sprite_frames = SubResource("SpriteFrames_t4gob")
+autoplay = "default"
+frame = 1
+
+[node name="滤镜" type="Sprite2D" parent="."]
+texture = ExtResource("16_4o5v6")
+centered = false
+
+[node name="Logo" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(436, 278)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_qdyqh")
+
+[node name="ButtonGroup" type="VBoxContainer" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 198.0
+offset_top = 520.0
+offset_right = 589.0
+offset_bottom = 1015.0
+theme = ExtResource("4_h6gk2")
+theme_override_constants/separation = 50
+
+[node name="ContinueButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+theme = ExtResource("4_h6gk2")
+text = "继 续 旅 途"
+
+[node name="NewGameButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+theme = ExtResource("4_h6gk2")
+text = "新 的 开 始"
+
+[node name="CollectionsButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+theme = ExtResource("4_h6gk2")
+text = "收 集 品"
+
+[node name="SettingsButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+theme = ExtResource("4_h6gk2")
+text = "设 置"
+
+[node name="ExitButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+theme = ExtResource("4_h6gk2")
+text = "退 出 游 戏"

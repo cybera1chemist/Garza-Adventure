@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://xqvwugiii3n3" path="res://Battle/Scripts/battle.gd" id="1_w7thn"]
 [ext_resource type="Resource" uid="uid://x0vd5v87el66" path="res://Battle/B0_instruction/B0_player_chart.tres" id="2_862p5"]
 [ext_resource type="Script" uid="uid://caxj4w8uyf81u" path="res://Battle/Scripts/lane.gd" id="4_357p8"]
-[ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/MenuTheme.tres" id="4_v78ou"]
+[ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/Themes/MenuTheme.tres" id="4_v78ou"]
 
 [node name="BattleUI" type="Control"]
 z_index = 5

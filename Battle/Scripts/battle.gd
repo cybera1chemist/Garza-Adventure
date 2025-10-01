@@ -133,18 +133,14 @@ func spawn_note(beat, length, trail):
 func on_perfect():
 	cur_combo += 1
 	cur_score += cur_combo * combo_factor + score_per_perfect * (1-combo_factor)
-	
-	combo_label.text = str(cur_combo)
-	score_label.text = str(int(round(cur_score)))
+	score_label.text = "%07d" % int(round(cur_score))
 	num_perfect += 1
 
 func on_good():
 	num_good += 1
 	cur_combo += 1
 	cur_score += cur_combo * combo_factor + score_per_good * (1-combo_factor)
-	
-	combo_label.text = str(cur_combo)
-	score_label.text = str(int(round(cur_score)))
+	score_label.text = "%07d" % int(round(cur_score))
 
 func on_bad():
 	num_bad += 1

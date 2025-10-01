@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu251iifj0rlm"]
+
+[ext_resource type="PackedScene" uid="uid://u7atfj2ig5xa" path="res://Global/save_and_load/single_load_item.tscn" id="1_w5ub4"]
+[ext_resource type="Shader" uid="uid://dabx7dynxw6w" path="res://Shader/dark_gau_blur.gdshader" id="2_t7cbt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmtfl"]
+shader = ExtResource("2_t7cbt")
+shader_parameter/strength = 3.3
+shader_parameter/mix_percentage = 0.50000002375
+
+[node name="LoadSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nmtfl")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 95.0
+offset_right = 209.0
+offset_bottom = 103.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 201.0
+offset_top = 95.0
+offset_right = 1755.0
+offset_bottom = 915.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="SingleLoadItem" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_w5ub4")]
+layout_mode = 2
+
+[node name="SingleLoadItem2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_w5ub4")]
+layout_mode = 2

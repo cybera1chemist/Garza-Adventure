@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://duokno1vhltyg"]
 
-[ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/MenuTheme.tres" id="1_8rf44"]
+[ext_resource type="Theme" uid="uid://crkw0167b5qxb" path="res://Assets/Themes/MenuTheme.tres" id="1_8rf44"]
 [ext_resource type="Texture2D" uid="uid://c4ciotam8jh12" path="res://Assets/UI/icons/settings-normal.png" id="3_qyryt"]
 [ext_resource type="Script" uid="uid://bv7ae8ve66i6a" path="res://Scripts/PauseMenu.gd" id="3_r2i2h"]
 [ext_resource type="Texture2D" uid="uid://bvtbmhgh1eiw6" path="res://Assets/UI/icons/settings-pressed.png" id="4_23me3"]
@@ -68,7 +68,7 @@ horizontal_alignment = 1
 
 [node name="VolumnBtn" type="Button" parent="Tablet"]
 custom_minimum_size = Vector2(200, 80)
-layout_mode = 2
+layout_mode = 0
 offset_left = 700.0
 offset_top = 450.0
 offset_right = 900.0
@@ -78,7 +78,7 @@ text = "音量设置"
 
 [node name="LatencyBtn" type="Button" parent="Tablet"]
 custom_minimum_size = Vector2(200, 80)
-layout_mode = 2
+layout_mode = 0
 offset_left = 1020.0
 offset_top = 450.0
 offset_right = 1220.0
@@ -88,7 +88,7 @@ text = "延迟调整"
 
 [node name="ResumeBtn" type="Button" parent="Tablet"]
 custom_minimum_size = Vector2(200, 80)
-layout_mode = 2
+layout_mode = 0
 offset_left = 700.0
 offset_top = 630.0
 offset_right = 900.0
@@ -98,7 +98,7 @@ text = "返回游戏"
 
 [node name="SaveExitBtn" type="Button" parent="Tablet"]
 custom_minimum_size = Vector2(200, 80)
-layout_mode = 2
+layout_mode = 0
 offset_left = 1020.0
 offset_top = 630.0
 offset_right = 1220.0

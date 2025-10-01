@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Garzas_Artful_Adventure"
-run/main_scene="uid://bui7sw7j4cxgy"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="uid://bn0ywylppwp4i"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]
@@ -23,6 +23,7 @@ driver/output_latency=10
 
 BlackTransition="*res://Scenes/UI/black_transition.tscn"
 CurtainTransition="*res://Battle/UI_Scene/curtain_transition.tscn"
+SaveLoadManager="*res://Global/save_and_load/SaveLoadManager.gd"
 
 [display]
 

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cxdq8ubapq330" path="res://Assets/Arts/Buildings/Cafe.png" id="8_mujqk"]
 [ext_resource type="Texture2D" uid="uid://dp2epv2vh3of2" path="res://Assets/Arts/Buildings/居民楼.png" id="9_q70h4"]
 [ext_resource type="Script" uid="uid://bo2duuysd1dfw" path="res://Scripts/NextLevel.gd" id="10_a7xof"]
-[ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/DialogTheme.tres" id="11_4kv7e"]
+[ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/Themes/DialogTheme.tres" id="11_4kv7e"]
 [ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="12_q82f4"]
 [ext_resource type="Texture2D" uid="uid://va8o3ij1aj1b" path="res://Assets/Arts/Decorations/Arrow.png" id="13_526bc"]
 [ext_resource type="Texture2D" uid="uid://dpkwgnwt2o864" path="res://Assets/Arts/Decorations/tree.png" id="14_vqc7k"]

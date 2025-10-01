@@ -7,8 +7,6 @@
 [sub_resource type="Resource" id="Resource_mlvj5"]
 script = ExtResource("1_ri831")
 length = 4.0
-beat = 0.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_630nw"]
@@ -22,7 +20,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 2.0
 beat = 8.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_05fgc"]
@@ -71,7 +68,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 1.0
 beat = 61.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_pgy3q"]
@@ -120,7 +116,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 1.0
 beat = 79.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_3b741"]
@@ -148,7 +143,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 1.0
 beat = 94.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_68cmj"]
@@ -162,14 +156,12 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 4.0
 beat = 96.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_h85dk"]
 script = ExtResource("1_ri831")
 length = 1.0
 beat = 109.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_ot0rq"]
@@ -197,7 +189,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 112.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_i80sk"]
@@ -211,7 +202,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 113.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_fvr25"]
@@ -225,7 +215,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 114.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_a3p2h"]
@@ -239,7 +228,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 115.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_gth4k"]
@@ -358,7 +346,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 124.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_n8q88"]
@@ -372,7 +359,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 125.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_annl4"]
@@ -386,7 +372,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 126.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_25sai"]
@@ -400,7 +385,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 127.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_ti35q"]
@@ -421,7 +405,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 128.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_r5i6n"]
@@ -435,7 +418,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 129.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_5vy6b"]
@@ -449,7 +431,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 130.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_04qi2"]
@@ -463,7 +444,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 131.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_ee1sq"]
@@ -582,7 +562,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 140.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_xtrt6"]
@@ -596,7 +575,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 141.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_m8w4c"]
@@ -610,7 +588,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 142.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_xp5po"]
@@ -624,7 +601,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 143.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_32gx1"]
@@ -645,7 +621,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 144.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_1eg3b"]
@@ -659,7 +634,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 145.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_a3t50"]
@@ -673,7 +647,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 146.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_e0uml"]
@@ -687,7 +660,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 147.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_c6mqr"]
@@ -757,7 +729,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 152.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_iwqnd"]
@@ -771,7 +742,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 153.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_6j2c8"]
@@ -785,7 +755,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 154.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_ff5l4"]
@@ -799,7 +768,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 155.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_s652j"]
@@ -862,7 +830,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 160.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_50jmg"]
@@ -876,7 +843,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 161.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_1x7wf"]
@@ -890,7 +856,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 162.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_8mvfi"]
@@ -904,14 +869,12 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 163.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_6yk74"]
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 163.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_631ja"]
@@ -981,7 +944,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 168.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_uexwd"]
@@ -995,7 +957,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 169.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_3l6qq"]
@@ -1009,7 +970,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 170.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_n4t44"]
@@ -1023,7 +983,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 171.5
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_ehatv"]
@@ -1086,7 +1045,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 176.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_k604f"]
@@ -1100,7 +1058,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 177.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_ei4ni"]
@@ -1114,7 +1071,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 178.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_5wauw"]
@@ -1128,7 +1084,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 179.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_v0qad"]
@@ -1198,7 +1153,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 184.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_6880f"]
@@ -1212,7 +1166,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 185.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_b5pb3"]
@@ -1226,7 +1179,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 186.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_yx815"]
@@ -1240,7 +1192,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 0.5
 beat = 187.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_xforw"]
@@ -1310,7 +1261,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 4.0
 beat = 192.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_15kr2"]
@@ -1324,7 +1274,6 @@ metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 script = ExtResource("1_ri831")
 length = 2.0
 beat = 200.0
-trail = 1
 metadata/_custom_type_script = "uid://djc7iv8njsvkx"
 
 [sub_resource type="Resource" id="Resource_as7dk"]

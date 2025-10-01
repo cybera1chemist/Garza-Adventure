@@ -33,7 +33,7 @@ func _ready() -> void:
 	painting_node.texture = painting
 	# data
 	level_label.text = judge_level()
-	score_label.text = "%06d" % score
+	score_label.text = "%07d" % score
 	perfect_label.text = "perfect: " + str(perfect)
 	good_label.text = "good: " + str(good)
 	bad_label.text = "bad: " + str(bad)

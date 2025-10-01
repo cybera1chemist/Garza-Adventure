@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://u7atfj2ig5xa"]
+
+[ext_resource type="Texture2D" uid="uid://1vyww7oiovlw" path="res://Assets/UI/icons/done.png" id="1_26xct"]
+[ext_resource type="Theme" uid="uid://cykyy3bf7limj" path="res://Assets/Themes/default_ui_theme.tres" id="1_uq3kn"]
+[ext_resource type="Texture2D" uid="uid://cuugr6nhoesdu" path="res://Assets/UI/icons/close.png" id="2_3anrn"]
+
+[node name="SingleLoadItem" type="Control"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 96.0
+offset_bottom = -974.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1600, 0)
+layout_mode = 0
+offset_right = 1008.0
+offset_bottom = 106.0
+color = Color(1, 0.33999997, 0.33999997, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadInfo" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/LoadInfo"]
+layout_mode = 2
+theme = ExtResource("1_uq3kn")
+theme_override_font_sizes/font_size = 50
+text = "filename"
+
+[node name="Label2" type="Label" parent="HBoxContainer/LoadInfo"]
+layout_mode = 2
+theme = ExtResource("1_uq3kn")
+theme_override_font_sizes/font_size = 50
+text = "saved at 2025-10-1"
+
+[node name="LoadButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "读取此存档"
+texture_normal = ExtResource("1_26xct")
+
+[node name="DeleteButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "删除此存档"
+texture_normal = ExtResource("2_3anrn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2016.0
+offset_right = 2016.0
+offset_bottom = 106.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]

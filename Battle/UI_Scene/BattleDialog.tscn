@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d13evarmtjg1l"]
 
-[ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/DialogTheme.tres" id="1_q38vn"]
+[ext_resource type="Theme" uid="uid://ccbnqqo4mqasu" path="res://Assets/Themes/DialogTheme.tres" id="1_q38vn"]
 [ext_resource type="Script" uid="uid://dl242lxkxu2c8" path="res://Battle/Scripts/BattleDialog.gd" id="2_hjxjo"]
 [ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="3_4n5xf"]
 [ext_resource type="FontFile" uid="uid://c5due0ncunwmp" path="res://Assets/UI/Fonts/荆南麦圆.ttf" id="4_t8vpj"]
