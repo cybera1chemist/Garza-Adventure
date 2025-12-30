@@ -1,9 +1,23 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cykyy3bf7limj"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cykyy3bf7limj"]
 
 [ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="1_v54qg"]
 [ext_resource type="StyleBox" uid="uid://b5jlem3sd4lvw" path="res://Scenes/StartMenu/Button_hover.tres" id="2_6v51c"]
 [ext_resource type="StyleBox" uid="uid://b71febwggl7fb" path="res://Scenes/StartMenu/Button_pressed.tres" id="3_i4wnb"]
 [ext_resource type="StyleBox" uid="uid://basdq3djq4udf" path="res://Scenes/StartMenu/Button_normal.tres" id="4_1kjpd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v51c"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6643457, 0.0008007032, 0.7479897, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
 
 [resource]
 Button/colors/font_color = Color(0.4117647, 0.20392157, 0.45882353, 1)
@@ -19,3 +33,4 @@ Button/styles/hover_pressed_mirrored = ExtResource("3_i4wnb")
 Button/styles/normal = ExtResource("4_1kjpd")
 Button/styles/pressed = ExtResource("3_i4wnb")
 Label/fonts/font = ExtResource("1_v54qg")
+Panel/styles/panel = SubResource("StyleBoxFlat_6v51c")

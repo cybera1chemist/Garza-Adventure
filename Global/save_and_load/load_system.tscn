@@ -1,49 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu251iifj0rlm"]
+[gd_scene load_steps=7 format=3 uid="uid://cu251iifj0rlm"]
 
+[ext_resource type="Script" uid="uid://ckm3iosiwunyy" path="res://Global/save_and_load/load_UI.gd" id="1_er4e4"]
 [ext_resource type="PackedScene" uid="uid://u7atfj2ig5xa" path="res://Global/save_and_load/single_load_item.tscn" id="1_w5ub4"]
 [ext_resource type="Shader" uid="uid://dabx7dynxw6w" path="res://Shader/dark_gau_blur.gdshader" id="2_t7cbt"]
+[ext_resource type="Theme" uid="uid://cykyy3bf7limj" path="res://Assets/Themes/default_ui_theme.tres" id="3_nmtfl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nmtfl"]
 shader = ExtResource("2_t7cbt")
-shader_parameter/strength = 3.3
-shader_parameter/mix_percentage = 0.50000002375
+shader_parameter/strength = 10.000000471740119
+shader_parameter/mix_percentage = 0.750000035625
 
-[node name="LoadSystem" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7cbt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.65829784, 0.25657687, 0.99999994, 1)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
-[node name="Blur" type="ColorRect" parent="."]
+[node name="LoadSystem" type="CanvasLayer"]
+script = ExtResource("1_er4e4")
+
+[node name="BackgroundBlur" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nmtfl")
 custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
-[node name="VScrollBar" type="VScrollBar" parent="."]
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = -32.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t7cbt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 95.0
-offset_right = 209.0
-offset_bottom = 103.0
+offset_left = 96.0
+offset_top = 43.0
+offset_right = 1796.0
+offset_bottom = 863.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-clip_contents = false
+[node name="LoadItems" type="VBoxContainer" parent="Panel/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="SingleLoadItem" parent="Panel/ScrollContainer/LoadItems" instance=ExtResource("1_w5ub4")]
+layout_mode = 2
+
+[node name="SingleLoadItem2" parent="Panel/ScrollContainer/LoadItems" instance=ExtResource("1_w5ub4")]
+layout_mode = 2
+
+[node name="SingleLoadItem3" parent="Panel/ScrollContainer/LoadItems" instance=ExtResource("1_w5ub4")]
+layout_mode = 2
+
+[node name="SingleLoadItem4" parent="Panel/ScrollContainer/LoadItems" instance=ExtResource("1_w5ub4")]
+layout_mode = 2
+
+[node name="SingleLoadItem5" parent="Panel/ScrollContainer/LoadItems" instance=ExtResource("1_w5ub4")]
+layout_mode = 2
+
+[node name="ReturnButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 95.0
-offset_right = 1755.0
-offset_bottom = 915.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-
-[node name="SingleLoadItem" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_w5ub4")]
-layout_mode = 2
-
-[node name="SingleLoadItem2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_w5ub4")]
-layout_mode = 2
+offset_left = 707.0
+offset_top = 903.0
+offset_right = 1217.0
+offset_bottom = 983.0
+theme = ExtResource("3_nmtfl")
+text = "返回"

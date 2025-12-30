@@ -13,7 +13,9 @@ var save_data = {
 		"filename": "default save file",
 		"save_time": "2025-10-1"
 	},
-	"playerStatus": {}
+	"playerStatus": {
+		"position": Vector2(0, 0)
+	}
 }
 	
 func _save() -> void:

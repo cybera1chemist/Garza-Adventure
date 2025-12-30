@@ -145,5 +145,6 @@ texture = ExtResource("2_l1axm")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="UI" instance=ExtResource("4_8766m")]
+visible = false
 
 [connection signal="body_entered" from="Jwt/Area2D" to="Jwt" method="_on_area_2d_body_entered"]

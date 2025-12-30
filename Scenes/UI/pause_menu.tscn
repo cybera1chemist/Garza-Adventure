@@ -35,7 +35,6 @@ texture_pressed = ExtResource("4_23me3")
 texture_hover = ExtResource("5_deree")
 
 [node name="Blur" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_kdnb7")
 layout_mode = 0
 offset_right = 1920.0
@@ -44,7 +43,6 @@ color = Color(0, 0, 0, 0.470588)
 
 [node name="Tablet" type="TextureRect" parent="."]
 process_mode = 3
-visible = false
 z_index = 1
 layout_mode = 0
 offset_right = 1920.0

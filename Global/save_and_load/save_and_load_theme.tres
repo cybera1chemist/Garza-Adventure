@@ -1,0 +1,63 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://0hu25pu7x30i"]
+
+[ext_resource type="FontFile" uid="uid://cw1eouphg6pxv" path="res://Assets/UI/Fonts/阿里妈妈幼圆体.ttf" id="1_c518d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c518d"]
+bg_color = Color(0.089063324, 0.057400003, 0.14, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.93333334, 0.8, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+anti_aliasing_size = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2hns"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.93207747, 0.80099875, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+anti_aliasing_size = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq74k"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7218842, 8.191854e-05, 0.59538835, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+anti_aliasing_size = 2.0
+
+[resource]
+Button/fonts/font = ExtResource("1_c518d")
+Button/styles/hover = SubResource("StyleBoxFlat_c518d")
+Button/styles/normal = SubResource("StyleBoxFlat_a2hns")
+Button/styles/pressed = SubResource("StyleBoxFlat_fq74k")
