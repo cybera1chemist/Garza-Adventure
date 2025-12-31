@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=5 format=3 uid="uid://5g2m4wlontyh"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_uxh4m"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_0aj54"]
+
+[sub_resource type="Resource" id="Resource_8d47y"]
+script = ExtResource("1_uxh4m")
+character_name = "嘎子的妈妈："
+content = "今天放学这么早呀？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_p5pi4"]
+script = ExtResource("1_uxh4m")
+character_name = "嘎子的妈妈："
+content = "你外婆好像有事找你，快去看看她吧。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_0aj54")
+dialog_id = 6
+dialog_list = Array[ExtResource("1_uxh4m")]([SubResource("Resource_8d47y"), SubResource("Resource_p5pi4")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

@@ -25,10 +25,12 @@ var typing_tween : Tween
 func _ready():
 	press_f.visible = false
 	text_panel.visible = false
-	dialog_len = len(dialog_group.dialog_list)
 	origianl_position = position
 	collision_shape.shape.size.x = area_x
 	collision_shape.shape.size.x = area_y
+
+	if dialog_group != null:
+		dialog_len = len(dialog_group.dialog_list)
 	
 func _on_interact_area_body_entered(body: Node2D) -> void:
 	if body is Player and text_panel.visible == false:
@@ -86,6 +88,7 @@ func exit_dialog():
 	text_panel.visible = false
 	position = origianl_position
 	player.is_in_dialog = false
+	dialog_index = 0
 	
 @warning_ignore("shadowed_variable")
 func adjust_panel_position(character_name: String):
@@ -93,5 +96,13 @@ func adjust_panel_position(character_name: String):
 		position.x = player.position.x
 		position.y = player.position.y - 350
 	else:
-		position.x = NPC.position.x
-		position.y = NPC.position.y - 350
+		position.x = origianl_position.x
+		position.y = origianl_position.y
+
+"""
+public API
+"""
+func set_dialog_group(new_dialog_group: DialogGroup) -> void:
+	dialog_group = new_dialog_group
+	dialog_index = 0
+	dialog_len = len(dialog_group.dialog_list)

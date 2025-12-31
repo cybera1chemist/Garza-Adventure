@@ -59,5 +59,6 @@ metadata/_custom_type_script = "uid://bs6xd4aigyj4"
 
 [resource]
 script = ExtResource("2_kxqyt")
+dialog_id = 4
 dialog_list = Array[ExtResource("1_u8ucc")]([SubResource("Resource_u8ucc"), SubResource("Resource_kxqyt"), SubResource("Resource_v4v05"), SubResource("Resource_t1u5t"), SubResource("Resource_mr7xw"), SubResource("Resource_iqaxl"), SubResource("Resource_wnja1"), SubResource("Resource_r7xk8"), SubResource("Resource_lreer")])
 metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

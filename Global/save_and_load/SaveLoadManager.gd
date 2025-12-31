@@ -15,6 +15,10 @@ var save_data = {
 	},
 	"playerStatus": {
 		"position": Vector2(0, 0)
+	},
+	"story": {
+		"current_chapter": 0,
+		"seen_dialogs": []
 	}
 }
 	
@@ -43,3 +47,14 @@ func _load(filename: String) -> void:
 		printerr("err on load!")
 	else:
 		print("Loaded!")
+
+"""
+API
+"""
+
+func has_seen_dialogue(id: String) -> bool:
+	return id in save_data["story"]["seen_dialogues"]
+
+func mark_dialogue_seen(id: String) -> void:
+	if not has_seen_dialogue(id):
+		save_data["story"]["seen_dialogues"].append(id)

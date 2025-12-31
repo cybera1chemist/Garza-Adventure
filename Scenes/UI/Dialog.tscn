@@ -17,6 +17,7 @@ corner_radius_bottom_left = 8
 size = Vector2(500, 400)
 
 [node name="Dialog" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
