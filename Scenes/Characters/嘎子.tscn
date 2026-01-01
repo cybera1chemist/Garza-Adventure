@@ -144,15 +144,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdnmy"]
-size = Vector2(182, 54)
+size = Vector2(113, 43)
 
 [node name="Garza" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("1_wdnmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -2)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_wqkq8")
 animation = &"walk"
 autoplay = "stand"
@@ -160,9 +159,10 @@ frame_progress = 0.583533
 offset = Vector2(-16, -314)
 
 [node name="feet" type="CollisionShape2D" parent="."]
-position = Vector2(11, -23)
 shape = SubResource("RectangleShape2D_wdnmy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -500)
+scale = Vector2(0.983612, 1.2719948)
+offset = Vector2(0, 150)
 position_smoothing_enabled = true

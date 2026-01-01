@@ -21,8 +21,8 @@ var is_in_dialog: bool = false
 func _ready() -> void:
 	camera.limit_left = CMR_limit_left
 	camera.limit_right = CMR_limit_right
-	camera.limit_top = CMR_limit_top
-	camera.limit_bottom = CMR_limit_bottom
+	camera.limit_top = CMR_limit_top - int(camera.offset.y)
+	camera.limit_bottom = CMR_limit_bottom - int(camera.offset.y)
 
 func _physics_process(_delta: float) -> void:
 	# handle player movement

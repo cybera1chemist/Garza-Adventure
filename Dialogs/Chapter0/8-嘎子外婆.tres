@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="DialogGroup" load_steps=10 format=3 uid="uid://ctf01j58cfrl4"]
+
+[ext_resource type="Script" uid="uid://bs6xd4aigyj4" path="res://Scripts/CustomLibrary/dialog.gd" id="1_5gmc6"]
+[ext_resource type="Script" uid="uid://clp0cmc3tdf3h" path="res://Scripts/CustomLibrary/dialog_group.gd" id="2_7cibr"]
+
+[sub_resource type="Resource" id="Resource_8d47y"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子的外婆："
+content = "嘎子乖乖放学回来了呀？今天在学校过得开心吗？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_5gmc6"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子："
+content = "嗯……跟平常一样吧，每天都是差不多的生活……"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_7cibr"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子的外婆："
+content = "唉，其实我们一直有件事瞒着你，如今你有自己的想法了，也是时候该告诉你了。"
+anim_name = "Idle"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_007x2"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子的外婆："
+content = "其实，小动物王国的每个小动物生来就被赋予了潜力，一旦这种潜力被激活，就可以获得一种特殊的能力。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_0toih"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子："
+content = "诶，超能力吗！？"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_gc06i"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子的外婆："
+content = "嘿嘿，我也不太清楚，因为我不是这种能力的使用者。"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[sub_resource type="Resource" id="Resource_cwf0y"]
+script = ExtResource("1_5gmc6")
+character_name = "嘎子的外婆："
+content = "但是你可以去问问你妈妈，她好像知道得很多。呵呵，你妈妈以前可是很厉害的！"
+metadata/_custom_type_script = "uid://bs6xd4aigyj4"
+
+[resource]
+script = ExtResource("2_7cibr")
+dialog_id = 6
+dialog_list = Array[ExtResource("1_5gmc6")]([SubResource("Resource_8d47y"), SubResource("Resource_5gmc6"), SubResource("Resource_7cibr"), SubResource("Resource_007x2"), SubResource("Resource_0toih"), SubResource("Resource_gc06i"), SubResource("Resource_cwf0y")])
+metadata/_custom_type_script = "uid://clp0cmc3tdf3h"

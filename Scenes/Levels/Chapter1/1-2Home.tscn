@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bui7sw7j4cxgy"]
+[gd_scene load_steps=31 format=3 uid="uid://bui7sw7j4cxgy"]
 
 [ext_resource type="Texture2D" uid="uid://cpr2l6dc41gx7" path="res://Assets/Arts/Background/嘎子家里.png" id="1_deqih"]
 [ext_resource type="Texture2D" uid="uid://cguslbffjaquy" path="res://Assets/Arts/Background/嘎子家里(1).png" id="2_l1axm"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dsy5my11gtt5u" path="res://Assets/Arts/CharacterSprites/嘎子妈妈-坐着.png" id="5_s58dy"]
 [ext_resource type="Resource" uid="uid://5g2m4wlontyh" path="res://Dialogs/Chapter0/7_嘎子妈妈1.tres" id="6_b5u81"]
 [ext_resource type="PackedScene" uid="uid://c1rtcqje700hj" path="res://Scenes/UI/Dialog.tscn" id="6_gc6mk"]
+[ext_resource type="Resource" uid="uid://cr7div06qd2bl" path="res://Dialogs/Chapter0/9_嘎子妈妈2.tres" id="7_clpaw"]
 [ext_resource type="Texture2D" uid="uid://d264pnhon5bd4" path="res://Assets/Arts/CharacterSprites/嘎子外婆.png" id="7_rklmy"]
+[ext_resource type="Resource" uid="uid://ctf01j58cfrl4" path="res://Dialogs/Chapter0/8-嘎子外婆.tres" id="10_qc0rk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8766m"]
 size = Vector2(421, 101)
@@ -114,6 +116,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5u81"]
+size = Vector2(94, 34)
+
+[sub_resource type="Animation" id="Animation_clpaw"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-633, 285), Vector2(-564, 281), Vector2(-499, 284)]
+}
+
+[sub_resource type="Animation" id="Animation_lxxnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-564, 281)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxxnp"]
+_data = {
+&"Idle": SubResource("Animation_clpaw"),
+&"RESET": SubResource("Animation_lxxnp")
+}
+
 [node name="chapter0_home" type="Node2D"]
 y_sort_enabled = true
 
@@ -131,7 +172,7 @@ position = Vector2(-214, 136.5)
 shape = SubResource("RectangleShape2D_s58dy")
 
 [node name="Garza" parent="." instance=ExtResource("3_l1axm")]
-position = Vector2(-49, 293)
+position = Vector2(-69, 174)
 CMR_limit_left = -960
 CMR_limit_right = 2000
 CMR_limit_top = -5000
@@ -151,11 +192,12 @@ texture = ExtResource("2_l1axm")
 visible = false
 
 [node name="嘎子妈妈" type="CharacterBody2D" parent="."]
+position = Vector2(201, 2)
 script = ExtResource("5_poqba")
 dialog1 = ExtResource("6_b5u81")
+dialog2 = ExtResource("7_clpaw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="嘎子妈妈"]
-position = Vector2(251, -4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lxxnp")
 animation = &"sit"
@@ -164,23 +206,42 @@ frame = 2
 frame_progress = 0.47084925
 
 [node name="Dialog" parent="嘎子妈妈" node_paths=PackedStringArray("player", "NPC") instance=ExtResource("6_gc6mk")]
-offset_left = 219.0
-offset_top = -155.0
-offset_right = 219.0
-offset_bottom = -155.0
-area_y = 500.0
+offset_left = 4.0
+offset_top = -184.0
+offset_right = 4.0
+offset_bottom = -184.0
+area_y = 600.0
 player = NodePath("../../Garza")
 NPC = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="嘎子妈妈"]
 
 [node name="嘎子外婆" type="CharacterBody2D" parent="."]
-y_sort_enabled = true
+position = Vector2(-564, 281)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="嘎子外婆"]
-position = Vector2(-500, 131)
+position = Vector2(0, -155)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gc6mk")
 animation = &"Idle"
-autoplay = "Idle"
+autoplay = "Happy"
+frame_progress = 0.075814456
 flip_h = true
+
+[node name="Dialog" parent="嘎子外婆" node_paths=PackedStringArray("player", "NPC") instance=ExtResource("6_gc6mk")]
+offset_left = 23.0
+offset_top = -326.0
+offset_right = 23.0
+offset_bottom = -326.0
+dialog_group = ExtResource("10_qc0rk")
+player = NodePath("../../Garza")
+NPC = NodePath("..")
+
+[node name="feet" type="CollisionShape2D" parent="嘎子外婆"]
+position = Vector2(13, -7)
+shape = SubResource("RectangleShape2D_b5u81")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="嘎子外婆"]
+libraries = {
+&"": SubResource("AnimationLibrary_lxxnp")
+}
